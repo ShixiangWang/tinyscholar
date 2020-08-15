@@ -1,21 +1,22 @@
 Package: tinyscholar
-Title: What the Package Does (One Line, Title Case)
+Title: Get and Show Google Scholar Profile
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Shixiang",
+           family = "Wang",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "w_shixiang@163.com",
+           comment = c(ORCID = "0000-0001-9855-7357"))
+Maintainer: Shixiang Wang <w_shixiang@163.com>
+Description: A tiny package to get google scholar profile data
+    from web api and show it in table or figure format.
+License: MIT + file LICENSE
+Imports: 
+    ggplot2,
+    gt,
+    jsonlite,
+    magrittr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: 
-    jsonlite,
-    magrittr,
-    gt,
-    ggplot2

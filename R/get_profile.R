@@ -1,4 +1,15 @@
-get_profile <- function(id = "FvNp0NkAAAAJ", sortby_date = FALSE) {
+#' Get Google Scholar Profile
+#'
+#' @param id Your google scholar identifier. You can find it in the URL of your google scholar profile.
+#' @param sortby_date Logical. If `TRUE`, the publications are sorted by date.
+#'
+#' @return a `Profile` object with list structure.
+#' @export
+#'
+#' @examples
+#' r <- get_profile("FvNp0NkAAAAJ")
+#' r
+get_profile <- function(sortby_date = FALSE) {
   url <- paste0(
     "http://cse.bth.se/~fer/googlescholar-api/googlescholar.php?user=",
     id,

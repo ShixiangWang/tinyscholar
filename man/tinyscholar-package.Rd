@@ -4,12 +4,13 @@
 \name{tinyscholar-package}
 \alias{tinyscholar}
 \alias{tinyscholar-package}
-\title{tinyscholar: What the Package Does (One Line, Title Case)}
+\title{tinyscholar: Get and Show Google Scholar Profile}
 \description{
-What the package does (one paragraph).
+A tiny package to get google scholar profile data
+    from web api and show it in table or figure format.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Shixiang Wang \email{w_shixiang@163.com} (\href{https://orcid.org/0000-0001-9855-7357}{ORCID})
 
 }
 \keyword{internal}
