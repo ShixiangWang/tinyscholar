@@ -63,7 +63,7 @@ tinyscholar <- function(id, sortby_date = FALSE, server = c("hiplot", "cse"),
   r <- jsonlite::read_json(url, simplifyVector = TRUE)
   r$citations_per_year <- sapply(r$citations_per_year, function(x) x)
   # r$publications$title <- gsub("&#8217;", "'", r$publications$title)
-  r$publications <- lapply(r$publications, function(x) gsub("&#8217;", "'", x)) %>%
+  r$publications <- lapply(r$publications, function(x) gsub("(&#8217;)|(&#39;)", "'", x)) %>%
     as.data.frame()
   r$citations <- data.frame(
     when = c("total", names(r$citations_per_year)),
