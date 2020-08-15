@@ -95,7 +95,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/ShixiangWang/tinyscholar/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -110,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Show Scholar Profile Plot.</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/ShixiangWang/tinyscholar/blob/master/R/scholar_plot.R'><code>R/scholar_plot.R</code></a></small>
     <div class="hidden name"><code>scholar_plot.Rd</code></div>
     </div>
 
@@ -120,6 +125,8 @@
 
     <pre class="usage"><span class='fu'>scholar_plot</span>(
   <span class='no'>profile</span>,
+  <span class='kw'>bar_width</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
+  <span class='kw'>add_text</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>title_citations</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>title_publications</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>caption_citations</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='st'>"Update:"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>()),
@@ -132,6 +139,14 @@
     <tr>
       <th>profile</th>
       <td><p>Result from <a href='tinyscholar.html'>tinyscholar</a>.</p></td>
+    </tr>
+    <tr>
+      <th>bar_width</th>
+      <td><p>bar width.</p></td>
+    </tr>
+    <tr>
+      <th>add_text</th>
+      <td><p>If <code>TRUE</code> (default), add text on the top of bar.</p></td>
     </tr>
     <tr>
       <th>title_citations</th>

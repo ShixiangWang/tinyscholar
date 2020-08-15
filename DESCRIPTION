@@ -11,6 +11,8 @@ Maintainer: Shixiang Wang <w_shixiang@163.com>
 Description: A tiny package to get personal Google scholar profile data
     from web api and show it in table or figure format.
 License: MIT + file LICENSE
+URL: https://github.com/ShixiangWang/tinyscholar
+BugReports: https://github.com/ShixiangWang/tinyscholar/issues
 Imports: 
     ggplot2,
     gt,

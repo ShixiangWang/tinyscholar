@@ -95,7 +95,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/ShixiangWang/tinyscholar/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -110,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Show Scholar Profile Table</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/ShixiangWang/tinyscholar/blob/master/R/scholar_table.R'><code>R/scholar_table.R</code></a></small>
     <div class="hidden name"><code>scholar_table.Rd</code></div>
     </div>
 
@@ -120,6 +125,7 @@
 
     <pre class="usage"><span class='fu'>scholar_table</span>(
   <span class='no'>profile</span>,
+  <span class='kw'>as_raw_html</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>title_citations</span> <span class='kw'>=</span> <span class='st'>"Citations"</span>,
   <span class='kw'>title_publications</span> <span class='kw'>=</span> <span class='st'>"Publications"</span>,
   <span class='kw'>caption_citations</span> <span class='kw'>=</span> <span class='kw pkg'>gt</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/gt/man/md.html'>md</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='st'>"**Update**:"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>())),
@@ -132,6 +138,11 @@
     <tr>
       <th>profile</th>
       <td><p>Result from <a href='tinyscholar.html'>tinyscholar</a>.</p></td>
+    </tr>
+    <tr>
+      <th>as_raw_html</th>
+      <td><p>If <code>TRUE</code> (not default), convert result <a href='https://rdrr.io/pkg/gt/man/gt.html'>gt::gt</a> object to raw html text.
+This is useful when apply the result to GitHub Markdown file.</p></td>
     </tr>
     <tr>
       <th>title_citations</th>
@@ -153,7 +164,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a length-2 list of <a href='https://rdrr.io/pkg/gt/man/gt.html'>gt::gt</a> object.</p>
+    <p>a length-2 list of <a href='https://rdrr.io/pkg/gt/man/gt.html'>gt::gt</a>/<code>html</code> object.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='tinyscholar.html'>tinyscholar</a>, <a href='scholar_plot.html'>scholar_plot</a></p></div>

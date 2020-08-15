@@ -6,6 +6,8 @@
 \usage{
 scholar_plot(
   profile,
+  bar_width = 0.5,
+  add_text = TRUE,
   title_citations = NULL,
   title_publications = NULL,
   caption_citations = paste("Update:", Sys.Date()),
@@ -14,6 +16,10 @@ scholar_plot(
 }
 \arguments{
 \item{profile}{Result from \link{tinyscholar}.}
+
+\item{bar_width}{bar width.}
+
+\item{add_text}{If \code{TRUE} (default), add text on the top of bar.}
 
 \item{title_citations}{Title for plot \code{citations}. Set by \link[ggplot2:labs]{ggplot2::labs}.}
 

@@ -95,7 +95,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/ShixiangWang/tinyscholar/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -110,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get Google Scholar Profile</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/ShixiangWang/tinyscholar/blob/master/R/tidyscholar.R'><code>R/tidyscholar.R</code></a></small>
     <div class="hidden name"><code>tinyscholar.Rd</code></div>
     </div>
 
@@ -118,7 +123,13 @@
     <p>Get Google Scholar Profile</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tinyscholar</span>(<span class='no'>id</span>, <span class='kw'>sortby_date</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>server</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"hiplot"</span>, <span class='st'>"cse"</span>))</pre>
+    <pre class="usage"><span class='fu'>tinyscholar</span>(
+  <span class='no'>id</span>,
+  <span class='kw'>sortby_date</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>server</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"hiplot"</span>, <span class='st'>"cse"</span>),
+  <span class='kw'>use_cache</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>cache_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='st'>"tinyscholar"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,6 +145,15 @@
     <tr>
       <th>server</th>
       <td><p>Web api server, default is <a href='https://hiplot.com.cn/'>hiplot platform</a>.</p></td>
+    </tr>
+    <tr>
+      <th>use_cache</th>
+      <td><p>If <code>TRUE</code> (default), store data to a cache file to avoid querying in next time within a day.
+The store file is identical for each person and each date.</p></td>
+    </tr>
+    <tr>
+      <th>cache_dir</th>
+      <td><p>A directory path.</p></td>
     </tr>
     </table>
 

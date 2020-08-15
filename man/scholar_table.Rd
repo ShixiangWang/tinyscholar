@@ -6,6 +6,7 @@
 \usage{
 scholar_table(
   profile,
+  as_raw_html = FALSE,
   title_citations = "Citations",
   title_publications = "Publications",
   caption_citations = gt::md(paste("**Update**:", Sys.Date())),
@@ -14,6 +15,9 @@ scholar_table(
 }
 \arguments{
 \item{profile}{Result from \link{tinyscholar}.}
+
+\item{as_raw_html}{If \code{TRUE} (not default), convert result \link[gt:gt]{gt::gt} object to raw html text.
+This is useful when apply the result to GitHub Markdown file.}
 
 \item{title_citations}{Title for table \code{citations}. Set by \link[gt:tab_header]{gt::tab_header}.}
 
@@ -24,7 +28,7 @@ scholar_table(
 \item{caption_publications}{Caption for table \code{publications}. Set by \link[gt:tab_source_note]{gt::tab_source_note}.}
 }
 \value{
-a length-2 list of \link[gt:gt]{gt::gt} object.
+a length-2 list of \link[gt:gt]{gt::gt}/\code{html} object.
 }
 \description{
 Show Scholar Profile Table
