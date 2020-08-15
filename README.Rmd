@@ -56,7 +56,7 @@ You can use this data in your way. The following parts provide two simple ways t
 
 Table is the best way to show the scholar profile. Tinyscholar uses [gt](https://gt.rstudio.com/index.html) package to generate tables which can be easily modified.
 
-```{r}
+```{r, eval=FALSE}
 tb <- scholar_table(profile)
 tb$citations
 tb$publications
