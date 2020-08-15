@@ -1,0 +1,77 @@
+---
+title: "tinyscholar"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tinyscholar}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tinyscholar)
+```
+
+The goal of tinyscholar is to provide a simple way to get and show Google scholar profile.
+
+## Installation
+
+You can install the released version of tinyscholar from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("tinyscholar")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("ShixiangWang/tinyscholar")
+```
+## Usage
+
+Here I will use my profile as an example.
+
+### Get Personal Profile
+
+Firstly, you need to get your Google scholar ID from URL of your Google scholar profile.
+
+Then you can use function `tinyscholar()` to get the tidy data, which is a list of two `data.frame` with added `profile` class.
+
+```{r}
+profile <- tinyscholar("FvNp0NkAAAAJ")
+str(profile, max.level = 1)
+```
+
+You can use this data in your way. The following parts provide two simple ways to show the profile.
+
+### Show Table
+
+Table is the best way to show the scholar profile. Tinyscholar uses [gt](https://gt.rstudio.com/index.html) package to generate tables which can be easily modified.
+
+```{r}
+tb <- scholar_table(profile)
+tb$citations
+tb$publications
+```
+
+
+### Show Plot
+
+Similarly, you can show numeric data with ggplot2 package.
+
+```{r, fig.align='center'}
+pl <- scholar_plot(profile)
+pl$citations
+pl$publications
+```
+
+## Similar R package
+
+R package [scholar](https://cran.r-project.org/package=scholar) is a more comprehensive package to get and visualize the Google scholar profile. However, tinyscholar is lightweight and not limited in China. 

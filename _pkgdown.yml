@@ -1,0 +1,8 @@
+template:
+  params:
+    bootswatch: united
+destination: docs
+
+authors:
+  Shixiang Wang:
+    href: https://orcid.org/0000-0001-9855-7357
