@@ -19,66 +19,19 @@ You can install the released version of tinyscholar from
 install.packages("tinyscholar")
 ```
 
-And the development version from [GitHub](https://github.com/) with:
+And the development version from [GitHub](https://github.com/) or Gitee
+with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("ShixiangWang/tinyscholar")
+# devtools::install_git("https://gitee.com/ShixiangWang/tinyscholar")
 ```
 
 ## Usage
 
-Here I will use my profile as an example.
-
-### Get Personal Profile
-
-Firstly, you need to get your Google scholar ID from URL of your Google
-scholar profile.
-
-Then you can use function `tinyscholar()` to get the tidy data, which is
-a list of two `data.frame` with added `profile` class.
-
-``` r
-library(tinyscholar)
-profile <- tinyscholar("FvNp0NkAAAAJ")
-str(profile, max.level = 1)
-#> List of 2
-#>  $ publications:'data.frame':    12 obs. of  5 variables:
-#>  $ citations   :'data.frame':    4 obs. of  2 variables:
-#>  - attr(*, "class")= chr [1:2] "ScholarProfile" "list"
-```
-
-You can use this data in your way. The following parts provide two
-simple ways to show the profile.
-
-### Show Table
-
-Table is the best way to show the scholar profile. Tinyscholar uses
-[gt](https://gt.rstudio.com/index.html) package to generate tables which
-can be easily modified.
-
-``` r
-tb <- scholar_table(profile)
-tb$citations
-tb$publications
-```
-
-### Show Plot
-
-Similarly, you can show numeric data with ggplot2 package.
-
-``` r
-pl <- scholar_plot(profile)
-pl$citations
-```
-
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" />
-
-``` r
-pl$publications
-```
-
-<img src="man/figures/README-unnamed-chunk-4-2.png" width="100%" style="display: block; margin: auto;" />
+Read the [online
+vignette](https://shixiangwang.github.io/tinyscholar/articles/tinyscholar.html).
 
 ## Similar R package
 

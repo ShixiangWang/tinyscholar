@@ -14,10 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(tinyscholar)
-```
-
 The goal of tinyscholar is to provide a simple way to get and show Google scholar profile.
 
 ## Installation
@@ -33,10 +29,16 @@ And the development version from [GitHub](https://github.com/) with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("ShixiangWang/tinyscholar")
+# devtools::install_git("https://gitee.com/ShixiangWang/tinyscholar")
 ```
+
 ## Usage
 
 Here I will use my profile as an example.
+
+```{r}
+library(tinyscholar)
+```
 
 ### Get Personal Profile
 

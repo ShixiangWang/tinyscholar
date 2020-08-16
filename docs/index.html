@@ -84,46 +84,15 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of tinyscholar from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinyscholar"</span>)</pre></div>
-<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<p>And the development version from <a href="https://github.com/">GitHub</a> or Gitee with:</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"ShixiangWang/tinyscholar"</span>)</pre></div>
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"ShixiangWang/tinyscholar"</span>)
+<span class="co"># devtools::install_git("https://gitee.com/ShixiangWang/tinyscholar")</span></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>Here I will use my profile as an example.</p>
-<div id="get-personal-profile" class="section level3">
-<h3 class="hasAnchor">
-<a href="#get-personal-profile" class="anchor"></a>Get Personal Profile</h3>
-<p>Firstly, you need to get your Google scholar ID from URL of your Google scholar profile.</p>
-<p>Then you can use function <code><a href="reference/tinyscholar.html">tinyscholar()</a></code> to get the tidy data, which is a list of two <code>data.frame</code> with added <code>profile</code> class.</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tinyscholar</span>)
-<span class="no">profile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/tinyscholar.html">tinyscholar</a></span>(<span class="st">"FvNp0NkAAAAJ"</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">profile</span>, <span class="kw">max.level</span> <span class="kw">=</span> <span class="fl">1</span>)
-<span class="co">#&gt; List of 2</span>
-<span class="co">#&gt;  $ publications:'data.frame':    12 obs. of  5 variables:</span>
-<span class="co">#&gt;  $ citations   :'data.frame':    4 obs. of  2 variables:</span>
-<span class="co">#&gt;  - attr(*, "class")= chr [1:2] "ScholarProfile" "list"</span></pre></div>
-<p>You can use this data in your way. The following parts provide two simple ways to show the profile.</p>
-</div>
-<div id="show-table" class="section level3">
-<h3 class="hasAnchor">
-<a href="#show-table" class="anchor"></a>Show Table</h3>
-<p>Table is the best way to show the scholar profile. Tinyscholar uses <a href="https://gt.rstudio.com/index.html">gt</a> package to generate tables which can be easily modified.</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="no">tb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/scholar_table.html">scholar_table</a></span>(<span class="no">profile</span>)
-<span class="no">tb</span>$<span class="no">citations</span>
-<span class="no">tb</span>$<span class="no">publications</span></pre></div>
-</div>
-<div id="show-plot" class="section level3">
-<h3 class="hasAnchor">
-<a href="#show-plot" class="anchor"></a>Show Plot</h3>
-<p>Similarly, you can show numeric data with ggplot2 package.</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="no">pl</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/scholar_plot.html">scholar_plot</a></span>(<span class="no">profile</span>)
-<span class="no">pl</span>$<span class="no">citations</span></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="no">pl</span>$<span class="no">publications</span></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-4-2.png" width="100%" style="display: block; margin: auto;"></p>
-</div>
+<p>Read the <a href="https://shixiangwang.github.io/tinyscholar/articles/tinyscholar.html">online vignette</a>.</p>
 </div>
 <div id="similar-r-package" class="section level2">
 <h2 class="hasAnchor">
