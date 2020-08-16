@@ -2,6 +2,7 @@
 #'
 #' @param profile Result from [tinyscholar].
 #' @param bar_width bar width.
+#' @param add_total If `TRUE` (not default), add total records in plot.
 #' @param add_text If `TRUE` (default), add text on the top of bar.
 #' @param title_citations Title for plot `citations`. Set by [ggplot2::labs].
 #' @param title_publications Title for plot `publications`. Set by [ggplot2::labs].
@@ -13,6 +14,7 @@
 #' @seealso [tinyscholar], [scholar_table]
 scholar_plot <- function(profile,
                          bar_width = 0.5,
+                         add_total = FALSE,
                          add_text = TRUE,
                          title_citations = NULL,
                          title_publications = NULL,
@@ -20,15 +22,23 @@ scholar_plot <- function(profile,
                          caption_publications = caption_citations) {
   stopifnot(inherits(profile, "ScholarProfile"))
 
-  c <- ggplot(profile$citations, aes_string(x = "when", y = "count")) +
+  c <- ggplot(if (add_total) profile$citations else
+    profile$citations %>% dplyr::filter(.data$when != "total"),
+    aes_string(x = "when", y = "count")) +
     geom_bar(stat = "identity", width = bar_width) +
     theme_minimal(base_size = 14) +
     labs(x = NULL, y = "Citations", title = title_citations, caption = caption_citations)
 
+  dat <- profile$publications %>%
+    dplyr::count(.data$year)
+
+  if (add_total) {
+    dat <- dat %>%
+      dplyr::add_row(year = "total", n = sum(.$n))
+  }
+
   p <- ggplot(
-    profile$publications %>%
-      dplyr::count(.data$year) %>%
-      dplyr::add_row(year = "total", n = sum(.$n)),
+    dat,
     aes_string(x = "year", y = "n")
   ) +
     geom_bar(stat = "identity", width = bar_width) +

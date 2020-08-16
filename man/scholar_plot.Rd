@@ -7,6 +7,7 @@
 scholar_plot(
   profile,
   bar_width = 0.5,
+  add_total = FALSE,
   add_text = TRUE,
   title_citations = NULL,
   title_publications = NULL,
@@ -18,6 +19,8 @@ scholar_plot(
 \item{profile}{Result from \link{tinyscholar}.}
 
 \item{bar_width}{bar width.}
+
+\item{add_total}{If \code{TRUE} (not default), add total records in plot.}
 
 \item{add_text}{If \code{TRUE} (default), add text on the top of bar.}
 
