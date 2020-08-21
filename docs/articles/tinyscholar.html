@@ -70,7 +70,7 @@
 
       
 
-      </header><script src="tinyscholar_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>tinyscholar</h1>
@@ -99,20 +99,35 @@
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>Here I will use my profile as an example.</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tinyscholar</span>)</pre></body></html></div>
+<div id="get-you-google-scholar-id" class="section level3">
+<h3 class="hasAnchor">
+<a href="#get-you-google-scholar-id" class="anchor"></a>Get You Google Scholar ID</h3>
+<p>Firstly, you need to get your Google scholar ID from URL of your Google scholar profile or by running the following function with a keyword:</p>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/scholar_search.html">scholar_search</a></span>(<span class="st">"Shixiang Wang"</span>)
+<span class="co">#&gt; Searching author Shixiang Wang</span>
+<span class="co">#&gt; Using API server: https://api.scaleserp.com</span>
+<span class="co">#&gt; Using Shixiang's personal API key, only 125 free searches per month for all packages users</span>
+<span class="co">#&gt; Search times used: 21</span>
+<span class="co">#&gt; Search times left: 104</span>
+<span class="co">#&gt;             id</span>
+<span class="co">#&gt; 1 FvNp0NkAAAAJ</span>
+<span class="co">#&gt;                                                                                               desc</span>
+<span class="co">#&gt; 1 Wang, Shixiang (王诗翔)ShanghaiTech. UniversityVerified email at shanghaitech.edu.cnCited by 114</span></pre></body></html></div>
+<p>Copy your ID and go to the next step.</p>
+</div>
 <div id="get-personal-profile" class="section level3">
 <h3 class="hasAnchor">
 <a href="#get-personal-profile" class="anchor"></a>Get Personal Profile</h3>
-<p>Firstly, you need to get your Google scholar ID from URL of your Google scholar profile.</p>
 <p>Then you can use function <code><a href="../reference/tinyscholar.html">tinyscholar()</a></code> to get the tidy data, which is a list of two <code>data.frame</code> with added <code>profile</code> class.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">profile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tinyscholar.html">tinyscholar</a></span>(<span class="st">"FvNp0NkAAAAJ"</span>)
-<span class="co">#&gt; Using cache directory: /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpGiyc9l/tinyscholar</span>
-<span class="co">#&gt; Cannot find cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpGiyc9l/tinyscholar/unsorted_2020-08-16_FvNp0NkAAAAJ.rds</span>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">profile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tinyscholar.html">tinyscholar</a></span>(<span class="st">"FvNp0NkAAAAJ"</span>)
+<span class="co">#&gt; Using cache directory: /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp4uFHse/tinyscholar</span>
+<span class="co">#&gt; Cannot find cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp4uFHse/tinyscholar/unsorted_2020-08-21_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Try quering data from server: hiplot</span>
-<span class="co">#&gt; Save data to cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpGiyc9l/tinyscholar/unsorted_2020-08-16_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Save data to cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp4uFHse/tinyscholar/unsorted_2020-08-21_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Done</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">profile</span>, <span class="kw">max.level</span> <span class="kw">=</span> <span class="fl">1</span>)
 <span class="co">#&gt; List of 2</span>
-<span class="co">#&gt;  $ publications:'data.frame':    12 obs. of  5 variables:</span>
+<span class="co">#&gt;  $ publications:'data.frame':    11 obs. of  5 variables:</span>
 <span class="co">#&gt;  $ citations   :'data.frame':    4 obs. of  2 variables:</span>
 <span class="co">#&gt;  - attr(*, "class")= chr [1:2] "ScholarProfile" "list"</span></pre></body></html></div>
 <p>You can use this data in your way. The following parts provide two simple ways to show the profile.</p>
@@ -121,21 +136,19 @@
 <h3 class="hasAnchor">
 <a href="#show-table" class="anchor"></a>Show Table</h3>
 <p>Table is the best way to show the scholar profile. Tinyscholar uses <a href="https://gt.rstudio.com/index.html">gt</a> package to generate tables which can be easily modified.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">tb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/scholar_table.html">scholar_table</a></span>(<span class="no">profile</span>)
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">tb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/scholar_table.html">scholar_table</a></span>(<span class="no">profile</span>)
 <span class="no">tb</span>$<span class="no">citations</span></pre></body></html></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#pjyzxemohh .gt_table {
+#olxqxthtxf .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
   font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
   background-color: #FFFFFF;
   width: auto;
   border-top-style: solid;
@@ -152,7 +165,7 @@
   border-left-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_heading {
+#olxqxthtxf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -164,7 +177,7 @@
   border-right-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_title {
+#olxqxthtxf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -174,7 +187,7 @@
   border-bottom-width: 0;
 }
 
-#pjyzxemohh .gt_subtitle {
+#olxqxthtxf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -184,13 +197,13 @@
   border-top-width: 0;
 }
 
-#pjyzxemohh .gt_bottom_border {
+#olxqxthtxf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_col_headings {
+#olxqxthtxf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -205,7 +218,7 @@
   border-right-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_col_heading {
+#olxqxthtxf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -225,7 +238,7 @@
   overflow-x: hidden;
 }
 
-#pjyzxemohh .gt_column_spanner_outer {
+#olxqxthtxf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -237,15 +250,15 @@
   padding-right: 4px;
 }
 
-#pjyzxemohh .gt_column_spanner_outer:first-child {
+#olxqxthtxf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pjyzxemohh .gt_column_spanner_outer:last-child {
+#olxqxthtxf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pjyzxemohh .gt_column_spanner {
+#olxqxthtxf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -257,7 +270,7 @@
   width: 100%;
 }
 
-#pjyzxemohh .gt_group_heading {
+#olxqxthtxf .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -279,7 +292,7 @@
   vertical-align: middle;
 }
 
-#pjyzxemohh .gt_empty_group_heading {
+#olxqxthtxf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -294,15 +307,19 @@
   vertical-align: middle;
 }
 
-#pjyzxemohh .gt_from_md > :first-child {
+#olxqxthtxf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#olxqxthtxf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pjyzxemohh .gt_from_md > :last-child {
+#olxqxthtxf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pjyzxemohh .gt_row {
+#olxqxthtxf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -321,7 +338,7 @@
   overflow-x: hidden;
 }
 
-#pjyzxemohh .gt_stub {
+#olxqxthtxf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -333,7 +350,7 @@
   padding-left: 12px;
 }
 
-#pjyzxemohh .gt_summary_row {
+#olxqxthtxf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -343,7 +360,7 @@
   padding-right: 5px;
 }
 
-#pjyzxemohh .gt_first_summary_row {
+#olxqxthtxf .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -353,7 +370,7 @@
   border-top-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_grand_summary_row {
+#olxqxthtxf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -363,7 +380,7 @@
   padding-right: 5px;
 }
 
-#pjyzxemohh .gt_first_grand_summary_row {
+#olxqxthtxf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -373,11 +390,7 @@
   border-top-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#pjyzxemohh .gt_table_body {
+#olxqxthtxf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -386,7 +399,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_footnotes {
+#olxqxthtxf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -400,13 +413,13 @@
   border-right-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_footnote {
+#olxqxthtxf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#pjyzxemohh .gt_sourcenotes {
+#olxqxthtxf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -420,46 +433,46 @@
   border-right-color: #D3D3D3;
 }
 
-#pjyzxemohh .gt_sourcenote {
+#olxqxthtxf .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#pjyzxemohh .gt_left {
+#olxqxthtxf .gt_left {
   text-align: left;
 }
 
-#pjyzxemohh .gt_center {
+#olxqxthtxf .gt_center {
   text-align: center;
 }
 
-#pjyzxemohh .gt_right {
+#olxqxthtxf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pjyzxemohh .gt_font_normal {
+#olxqxthtxf .gt_font_normal {
   font-weight: normal;
 }
 
-#pjyzxemohh .gt_font_bold {
+#olxqxthtxf .gt_font_bold {
   font-weight: bold;
 }
 
-#pjyzxemohh .gt_font_italic {
+#olxqxthtxf .gt_font_italic {
   font-style: italic;
 }
 
-#pjyzxemohh .gt_super {
+#olxqxthtxf .gt_super {
   font-size: 65%;
 }
 
-#pjyzxemohh .gt_footnote_marks {
+#olxqxthtxf .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="pjyzxemohh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="olxqxthtxf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="2" class="gt_heading gt_title gt_font_normal" style>Citations</th>
@@ -475,7 +488,7 @@
 <tbody class="gt_table_body">
 <tr>
 <td class="gt_row gt_left">total</td>
-      <td class="gt_row gt_center">113</td>
+      <td class="gt_row gt_center">114</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">2018</td>
@@ -487,28 +500,26 @@
     </tr>
 <tr>
 <td class="gt_row gt_left">2020</td>
-      <td class="gt_row gt_center">77</td>
+      <td class="gt_row gt_center">78</td>
     </tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="2">
-<strong>Update</strong>: 2020-08-16</td>
+<strong>Update</strong>: 2020-08-21</td>
     </tr></tfoot>
 </table></div>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">tb</span>$<span class="no">publications</span></pre></body></html></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">tb</span>$<span class="no">publications</span></pre></body></html></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#nueuygaowd .gt_table {
+#jkphpdtmsn .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
   font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
   background-color: #FFFFFF;
   width: auto;
   border-top-style: solid;
@@ -525,7 +536,7 @@
   border-left-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_heading {
+#jkphpdtmsn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -537,7 +548,7 @@
   border-right-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_title {
+#jkphpdtmsn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -547,7 +558,7 @@
   border-bottom-width: 0;
 }
 
-#nueuygaowd .gt_subtitle {
+#jkphpdtmsn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -557,13 +568,13 @@
   border-top-width: 0;
 }
 
-#nueuygaowd .gt_bottom_border {
+#jkphpdtmsn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_col_headings {
+#jkphpdtmsn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -578,7 +589,7 @@
   border-right-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_col_heading {
+#jkphpdtmsn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -598,7 +609,7 @@
   overflow-x: hidden;
 }
 
-#nueuygaowd .gt_column_spanner_outer {
+#jkphpdtmsn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -610,15 +621,15 @@
   padding-right: 4px;
 }
 
-#nueuygaowd .gt_column_spanner_outer:first-child {
+#jkphpdtmsn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nueuygaowd .gt_column_spanner_outer:last-child {
+#jkphpdtmsn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nueuygaowd .gt_column_spanner {
+#jkphpdtmsn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -630,7 +641,7 @@
   width: 100%;
 }
 
-#nueuygaowd .gt_group_heading {
+#jkphpdtmsn .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -652,7 +663,7 @@
   vertical-align: middle;
 }
 
-#nueuygaowd .gt_empty_group_heading {
+#jkphpdtmsn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -667,15 +678,19 @@
   vertical-align: middle;
 }
 
-#nueuygaowd .gt_from_md > :first-child {
+#jkphpdtmsn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jkphpdtmsn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nueuygaowd .gt_from_md > :last-child {
+#jkphpdtmsn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nueuygaowd .gt_row {
+#jkphpdtmsn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -694,7 +709,7 @@
   overflow-x: hidden;
 }
 
-#nueuygaowd .gt_stub {
+#jkphpdtmsn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -706,7 +721,7 @@
   padding-left: 12px;
 }
 
-#nueuygaowd .gt_summary_row {
+#jkphpdtmsn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -716,7 +731,7 @@
   padding-right: 5px;
 }
 
-#nueuygaowd .gt_first_summary_row {
+#jkphpdtmsn .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -726,7 +741,7 @@
   border-top-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_grand_summary_row {
+#jkphpdtmsn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -736,7 +751,7 @@
   padding-right: 5px;
 }
 
-#nueuygaowd .gt_first_grand_summary_row {
+#jkphpdtmsn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -746,11 +761,7 @@
   border-top-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#nueuygaowd .gt_table_body {
+#jkphpdtmsn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -759,7 +770,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_footnotes {
+#jkphpdtmsn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -773,13 +784,13 @@
   border-right-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_footnote {
+#jkphpdtmsn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#nueuygaowd .gt_sourcenotes {
+#jkphpdtmsn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -793,46 +804,46 @@
   border-right-color: #D3D3D3;
 }
 
-#nueuygaowd .gt_sourcenote {
+#jkphpdtmsn .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#nueuygaowd .gt_left {
+#jkphpdtmsn .gt_left {
   text-align: left;
 }
 
-#nueuygaowd .gt_center {
+#jkphpdtmsn .gt_center {
   text-align: center;
 }
 
-#nueuygaowd .gt_right {
+#jkphpdtmsn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nueuygaowd .gt_font_normal {
+#jkphpdtmsn .gt_font_normal {
   font-weight: normal;
 }
 
-#nueuygaowd .gt_font_bold {
+#jkphpdtmsn .gt_font_bold {
   font-weight: bold;
 }
 
-#nueuygaowd .gt_font_italic {
+#jkphpdtmsn .gt_font_italic {
   font-style: italic;
 }
 
-#nueuygaowd .gt_super {
+#jkphpdtmsn .gt_super {
   font-size: 65%;
 }
 
-#nueuygaowd .gt_footnote_marks {
+#jkphpdtmsn .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="nueuygaowd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="jkphpdtmsn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Publications</th>
@@ -867,7 +878,7 @@
 <td class="gt_row gt_left">Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction</td>
       <td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, XS Liu</td>
       <td class="gt_row gt_left">eLife, 2019</td>
-      <td class="gt_row gt_left">17</td>
+      <td class="gt_row gt_left">18</td>
       <td class="gt_row gt_left">2019</td>
     </tr>
 <tr>
@@ -899,6 +910,13 @@
       <td class="gt_row gt_left">2020</td>
     </tr>
 <tr>
+<td class="gt_row gt_left">Sigflow: an automated and comprehensive pipeline for cancer genome mutational signature analysis</td>
+      <td class="gt_row gt_left">S Wang, Z Tao, T Wu, XS Liu</td>
+      <td class="gt_row gt_left">bioRxiv, 2020</td>
+      <td class="gt_row gt_left">0</td>
+      <td class="gt_row gt_left">2020</td>
+    </tr>
+<tr>
 <td class="gt_row gt_left">Copy number signature analyses in prostate cancer reveal distinct etiologies and clinical outcomes</td>
       <td class="gt_row gt_left">S Wang, H Li, M Song, Z He, T Wu, X Wang, Z Tao, K Wu, XS Liu</td>
       <td class="gt_row gt_left">medRxiv, 2020</td>
@@ -919,24 +937,10 @@
       <td class="gt_row gt_left">0</td>
       <td class="gt_row gt_left">2019</td>
     </tr>
-<tr>
-<td class="gt_row gt_left">sigminer v1. 0.0</td>
-      <td class="gt_row gt_left">S Wang</td>
-      <td class="gt_row gt_left"></td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">0</td>
-    </tr>
-<tr>
-<td class="gt_row gt_left">sigminer: an easy-to-use and scalable toolkit for genomic alteration signature analysis and visualization in R logo</td>
-      <td class="gt_row gt_left">S Wang</td>
-      <td class="gt_row gt_left"></td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">0</td>
-    </tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="5">
-<strong>Update</strong>: 2020-08-16</td>
+<strong>Update</strong>: 2020-08-21</td>
     </tr></tfoot>
 </table></div>
 </div>
@@ -944,11 +948,11 @@
 <h3 class="hasAnchor">
 <a href="#show-plot" class="anchor"></a>Show Plot</h3>
 <p>Similarly, you can show numeric data with ggplot2 package.</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">pl</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/scholar_plot.html">scholar_plot</a></span>(<span class="no">profile</span>)
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">pl</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/scholar_plot.html">scholar_plot</a></span>(<span class="no">profile</span>)
 <span class="no">pl</span>$<span class="no">citations</span></pre></body></html></div>
-<p><img src="tinyscholar_files/figure-html/unnamed-chunk-5-1.png" width="700" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">pl</span>$<span class="no">publications</span></pre></body></html></div>
-<p><img src="tinyscholar_files/figure-html/unnamed-chunk-5-2.png" width="700" style="display: block; margin: auto;"></p>
+<p><img src="tinyscholar_files/figure-html/unnamed-chunk-6-1.png" width="700" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">pl</span>$<span class="no">publications</span></pre></body></html></div>
+<p><img src="tinyscholar_files/figure-html/unnamed-chunk-6-2.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div id="similar-r-package" class="section level2">

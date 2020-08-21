@@ -22,9 +22,14 @@ scholar_plot <- function(profile,
                          caption_publications = caption_citations) {
   stopifnot(inherits(profile, "ScholarProfile"))
 
-  c <- ggplot(if (add_total) profile$citations else
-    profile$citations %>% dplyr::filter(.data$when != "total"),
-    aes_string(x = "when", y = "count")) +
+  c <- ggplot(
+    if (add_total) {
+      profile$citations
+    } else {
+      profile$citations %>% dplyr::filter(.data$when != "total")
+    },
+    aes_string(x = "when", y = "count")
+  ) +
     geom_bar(stat = "identity", width = bar_width) +
     theme_minimal(base_size = 14) +
     labs(x = NULL, y = "Citations", title = title_citations, caption = caption_citations)

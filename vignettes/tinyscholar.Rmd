@@ -40,9 +40,17 @@ Here I will use my profile as an example.
 library(tinyscholar)
 ```
 
-### Get Personal Profile
+### Get You Google Scholar ID
 
-Firstly, you need to get your Google scholar ID from URL of your Google scholar profile.
+Firstly, you need to get your Google scholar ID from URL of your Google scholar profile or by running the following function with a keyword:
+
+```{r}
+scholar_search("Shixiang Wang")
+```
+
+Copy your ID and go to the next step.
+
+### Get Personal Profile
 
 Then you can use function `tinyscholar()` to get the tidy data, which is a list of two `data.frame` with added `profile` class.
 
