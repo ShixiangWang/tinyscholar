@@ -91,7 +91,7 @@
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinyscholar"</span>)</pre></body></html></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"ShixiangWang/tinyscholar"</span>)
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"ShixiangWang/tinyscholar"</span>)
 <span class="co"># devtools::install_git("https://gitee.com/ShixiangWang/tinyscholar")</span></pre></body></html></div>
 </div>
 <div id="usage" class="section level2">
@@ -107,12 +107,12 @@
 <span class="co">#&gt; Searching author Shixiang Wang</span>
 <span class="co">#&gt; Using API server: https://api.scaleserp.com</span>
 <span class="co">#&gt; Using Shixiang's personal API key, only 125 free searches per month for all packages users</span>
-<span class="co">#&gt; Search times used: 21</span>
-<span class="co">#&gt; Search times left: 104</span>
+<span class="co">#&gt; Search times used: 30</span>
+<span class="co">#&gt; Search times left: 95</span>
 <span class="co">#&gt;             id</span>
 <span class="co">#&gt; 1 FvNp0NkAAAAJ</span>
 <span class="co">#&gt;                                                                                               desc</span>
-<span class="co">#&gt; 1 Wang, Shixiang (王诗翔)ShanghaiTech. UniversityVerified email at shanghaitech.edu.cnCited by 114</span></pre></body></html></div>
+<span class="co">#&gt; 1 Wang, Shixiang (王诗翔)ShanghaiTech. UniversityVerified email at shanghaitech.edu.cnCited by 119</span></pre></body></html></div>
 <p>Copy your ID and go to the next step.</p>
 </div>
 <div id="get-personal-profile" class="section level3">
@@ -120,10 +120,10 @@
 <a href="#get-personal-profile" class="anchor"></a>Get Personal Profile</h3>
 <p>Then you can use function <code><a href="../reference/tinyscholar.html">tinyscholar()</a></code> to get the tidy data, which is a list of two <code>data.frame</code> with added <code>profile</code> class.</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">profile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tinyscholar.html">tinyscholar</a></span>(<span class="st">"FvNp0NkAAAAJ"</span>)
-<span class="co">#&gt; Using cache directory: /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp4uFHse/tinyscholar</span>
-<span class="co">#&gt; Cannot find cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp4uFHse/tinyscholar/unsorted_2020-08-21_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Using cache directory: /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp5WcC5m/tinyscholar</span>
+<span class="co">#&gt; Cannot find cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp5WcC5m/tinyscholar/unsorted_2020-08-27_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Try quering data from server: hiplot</span>
-<span class="co">#&gt; Save data to cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp4uFHse/tinyscholar/unsorted_2020-08-21_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Save data to cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp5WcC5m/tinyscholar/unsorted_2020-08-27_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Done</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">profile</span>, <span class="kw">max.level</span> <span class="kw">=</span> <span class="fl">1</span>)
 <span class="co">#&gt; List of 2</span>
@@ -142,13 +142,15 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#olxqxthtxf .gt_table {
+#ryjoeswcrm .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
   font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
   background-color: #FFFFFF;
   width: auto;
   border-top-style: solid;
@@ -165,7 +167,7 @@
   border-left-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_heading {
+#ryjoeswcrm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -177,7 +179,7 @@
   border-right-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_title {
+#ryjoeswcrm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -187,7 +189,7 @@
   border-bottom-width: 0;
 }
 
-#olxqxthtxf .gt_subtitle {
+#ryjoeswcrm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -197,13 +199,13 @@
   border-top-width: 0;
 }
 
-#olxqxthtxf .gt_bottom_border {
+#ryjoeswcrm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_col_headings {
+#ryjoeswcrm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -218,7 +220,7 @@
   border-right-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_col_heading {
+#ryjoeswcrm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -238,7 +240,7 @@
   overflow-x: hidden;
 }
 
-#olxqxthtxf .gt_column_spanner_outer {
+#ryjoeswcrm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -250,15 +252,15 @@
   padding-right: 4px;
 }
 
-#olxqxthtxf .gt_column_spanner_outer:first-child {
+#ryjoeswcrm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#olxqxthtxf .gt_column_spanner_outer:last-child {
+#ryjoeswcrm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#olxqxthtxf .gt_column_spanner {
+#ryjoeswcrm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -270,7 +272,7 @@
   width: 100%;
 }
 
-#olxqxthtxf .gt_group_heading {
+#ryjoeswcrm .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -292,7 +294,7 @@
   vertical-align: middle;
 }
 
-#olxqxthtxf .gt_empty_group_heading {
+#ryjoeswcrm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -307,19 +309,15 @@
   vertical-align: middle;
 }
 
-#olxqxthtxf .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#olxqxthtxf .gt_from_md > :first-child {
+#ryjoeswcrm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#olxqxthtxf .gt_from_md > :last-child {
+#ryjoeswcrm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#olxqxthtxf .gt_row {
+#ryjoeswcrm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -338,7 +336,7 @@
   overflow-x: hidden;
 }
 
-#olxqxthtxf .gt_stub {
+#ryjoeswcrm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -350,7 +348,7 @@
   padding-left: 12px;
 }
 
-#olxqxthtxf .gt_summary_row {
+#ryjoeswcrm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -360,7 +358,7 @@
   padding-right: 5px;
 }
 
-#olxqxthtxf .gt_first_summary_row {
+#ryjoeswcrm .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -370,7 +368,7 @@
   border-top-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_grand_summary_row {
+#ryjoeswcrm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -380,7 +378,7 @@
   padding-right: 5px;
 }
 
-#olxqxthtxf .gt_first_grand_summary_row {
+#ryjoeswcrm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -390,7 +388,11 @@
   border-top-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_table_body {
+#ryjoeswcrm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ryjoeswcrm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -399,7 +401,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_footnotes {
+#ryjoeswcrm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -413,13 +415,13 @@
   border-right-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_footnote {
+#ryjoeswcrm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#olxqxthtxf .gt_sourcenotes {
+#ryjoeswcrm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -433,46 +435,46 @@
   border-right-color: #D3D3D3;
 }
 
-#olxqxthtxf .gt_sourcenote {
+#ryjoeswcrm .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#olxqxthtxf .gt_left {
+#ryjoeswcrm .gt_left {
   text-align: left;
 }
 
-#olxqxthtxf .gt_center {
+#ryjoeswcrm .gt_center {
   text-align: center;
 }
 
-#olxqxthtxf .gt_right {
+#ryjoeswcrm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#olxqxthtxf .gt_font_normal {
+#ryjoeswcrm .gt_font_normal {
   font-weight: normal;
 }
 
-#olxqxthtxf .gt_font_bold {
+#ryjoeswcrm .gt_font_bold {
   font-weight: bold;
 }
 
-#olxqxthtxf .gt_font_italic {
+#ryjoeswcrm .gt_font_italic {
   font-style: italic;
 }
 
-#olxqxthtxf .gt_super {
+#ryjoeswcrm .gt_super {
   font-size: 65%;
 }
 
-#olxqxthtxf .gt_footnote_marks {
+#ryjoeswcrm .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="olxqxthtxf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="ryjoeswcrm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="2" class="gt_heading gt_title gt_font_normal" style>Citations</th>
@@ -488,7 +490,7 @@
 <tbody class="gt_table_body">
 <tr>
 <td class="gt_row gt_left">total</td>
-      <td class="gt_row gt_center">114</td>
+      <td class="gt_row gt_center">119</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">2018</td>
@@ -500,12 +502,12 @@
     </tr>
 <tr>
 <td class="gt_row gt_left">2020</td>
-      <td class="gt_row gt_center">78</td>
+      <td class="gt_row gt_center">82</td>
     </tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="2">
-<strong>Update</strong>: 2020-08-21</td>
+<strong>Update</strong>: 2020-08-27</td>
     </tr></tfoot>
 </table></div>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">tb</span>$<span class="no">publications</span></pre></body></html></div>
@@ -513,13 +515,15 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#jkphpdtmsn .gt_table {
+#tpgkjigdqk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
   font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
   background-color: #FFFFFF;
   width: auto;
   border-top-style: solid;
@@ -536,7 +540,7 @@
   border-left-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_heading {
+#tpgkjigdqk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -548,7 +552,7 @@
   border-right-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_title {
+#tpgkjigdqk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -558,7 +562,7 @@
   border-bottom-width: 0;
 }
 
-#jkphpdtmsn .gt_subtitle {
+#tpgkjigdqk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -568,13 +572,13 @@
   border-top-width: 0;
 }
 
-#jkphpdtmsn .gt_bottom_border {
+#tpgkjigdqk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_col_headings {
+#tpgkjigdqk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -589,7 +593,7 @@
   border-right-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_col_heading {
+#tpgkjigdqk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -609,7 +613,7 @@
   overflow-x: hidden;
 }
 
-#jkphpdtmsn .gt_column_spanner_outer {
+#tpgkjigdqk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -621,15 +625,15 @@
   padding-right: 4px;
 }
 
-#jkphpdtmsn .gt_column_spanner_outer:first-child {
+#tpgkjigdqk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jkphpdtmsn .gt_column_spanner_outer:last-child {
+#tpgkjigdqk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jkphpdtmsn .gt_column_spanner {
+#tpgkjigdqk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -641,7 +645,7 @@
   width: 100%;
 }
 
-#jkphpdtmsn .gt_group_heading {
+#tpgkjigdqk .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -663,7 +667,7 @@
   vertical-align: middle;
 }
 
-#jkphpdtmsn .gt_empty_group_heading {
+#tpgkjigdqk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -678,19 +682,15 @@
   vertical-align: middle;
 }
 
-#jkphpdtmsn .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#jkphpdtmsn .gt_from_md > :first-child {
+#tpgkjigdqk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jkphpdtmsn .gt_from_md > :last-child {
+#tpgkjigdqk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jkphpdtmsn .gt_row {
+#tpgkjigdqk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -709,7 +709,7 @@
   overflow-x: hidden;
 }
 
-#jkphpdtmsn .gt_stub {
+#tpgkjigdqk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,7 +721,7 @@
   padding-left: 12px;
 }
 
-#jkphpdtmsn .gt_summary_row {
+#tpgkjigdqk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -731,7 +731,7 @@
   padding-right: 5px;
 }
 
-#jkphpdtmsn .gt_first_summary_row {
+#tpgkjigdqk .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -741,7 +741,7 @@
   border-top-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_grand_summary_row {
+#tpgkjigdqk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -751,7 +751,7 @@
   padding-right: 5px;
 }
 
-#jkphpdtmsn .gt_first_grand_summary_row {
+#tpgkjigdqk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -761,7 +761,11 @@
   border-top-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_table_body {
+#tpgkjigdqk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tpgkjigdqk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -770,7 +774,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_footnotes {
+#tpgkjigdqk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -784,13 +788,13 @@
   border-right-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_footnote {
+#tpgkjigdqk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#jkphpdtmsn .gt_sourcenotes {
+#tpgkjigdqk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -804,46 +808,46 @@
   border-right-color: #D3D3D3;
 }
 
-#jkphpdtmsn .gt_sourcenote {
+#tpgkjigdqk .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#jkphpdtmsn .gt_left {
+#tpgkjigdqk .gt_left {
   text-align: left;
 }
 
-#jkphpdtmsn .gt_center {
+#tpgkjigdqk .gt_center {
   text-align: center;
 }
 
-#jkphpdtmsn .gt_right {
+#tpgkjigdqk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jkphpdtmsn .gt_font_normal {
+#tpgkjigdqk .gt_font_normal {
   font-weight: normal;
 }
 
-#jkphpdtmsn .gt_font_bold {
+#tpgkjigdqk .gt_font_bold {
   font-weight: bold;
 }
 
-#jkphpdtmsn .gt_font_italic {
+#tpgkjigdqk .gt_font_italic {
   font-style: italic;
 }
 
-#jkphpdtmsn .gt_super {
+#tpgkjigdqk .gt_super {
   font-size: 65%;
 }
 
-#jkphpdtmsn .gt_footnote_marks {
+#tpgkjigdqk .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="jkphpdtmsn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="tpgkjigdqk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Publications</th>
@@ -864,8 +868,15 @@
 <td class="gt_row gt_left">APOBEC3B and APOBEC mutational signature as potential predictive markers for immunotherapy response in non-small cell lung cancer</td>
       <td class="gt_row gt_left">S Wang, M Jia, Z He, XS Liu</td>
       <td class="gt_row gt_left">Oncogene 37 (29), 3924-3936, 2018</td>
-      <td class="gt_row gt_left">55</td>
+      <td class="gt_row gt_left">56</td>
       <td class="gt_row gt_left">2018</td>
+    </tr>
+<tr>
+<td class="gt_row gt_left">Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction</td>
+      <td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, XS Liu</td>
+      <td class="gt_row gt_left">eLife, 2019</td>
+      <td class="gt_row gt_left">19</td>
+      <td class="gt_row gt_left">2019</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">Sex Differences in Cancer Immunotherapy Efficacy, Biomarkers, and Therapeutic Strategy</td>
@@ -875,17 +886,10 @@
       <td class="gt_row gt_left">2019</td>
     </tr>
 <tr>
-<td class="gt_row gt_left">Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction</td>
-      <td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, XS Liu</td>
-      <td class="gt_row gt_left">eLife, 2019</td>
-      <td class="gt_row gt_left">18</td>
-      <td class="gt_row gt_left">2019</td>
-    </tr>
-<tr>
 <td class="gt_row gt_left">The predictive power of tumor mutational burden in lung cancer immunotherapy response is influenced by patients' sex</td>
       <td class="gt_row gt_left">S Wang, J Zhang, Z He, K Wu, XS Liu</td>
       <td class="gt_row gt_left">International journal of cancer 145 (10), 2840-2849, 2019</td>
-      <td class="gt_row gt_left">17</td>
+      <td class="gt_row gt_left">18</td>
       <td class="gt_row gt_left">2019</td>
     </tr>
 <tr>
@@ -894,6 +898,13 @@
       <td class="gt_row gt_left">Journal of Open Source Software 4 (40), 1627, 2019</td>
       <td class="gt_row gt_left">4</td>
       <td class="gt_row gt_left">2019</td>
+    </tr>
+<tr>
+<td class="gt_row gt_left">Copy number signature analyses in prostate cancer reveal distinct etiologies and clinical outcomes</td>
+      <td class="gt_row gt_left">S Wang, H Li, M Song, Z He, T Wu, X Wang, Z Tao, K Wu, XS Liu</td>
+      <td class="gt_row gt_left">medRxiv, 2020</td>
+      <td class="gt_row gt_left">2</td>
+      <td class="gt_row gt_left">2020</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">Can tumor mutational burden determine the most effective treatment for lung cancer patients?</td>
@@ -917,13 +928,6 @@
       <td class="gt_row gt_left">2020</td>
     </tr>
 <tr>
-<td class="gt_row gt_left">Copy number signature analyses in prostate cancer reveal distinct etiologies and clinical outcomes</td>
-      <td class="gt_row gt_left">S Wang, H Li, M Song, Z He, T Wu, X Wang, Z Tao, K Wu, XS Liu</td>
-      <td class="gt_row gt_left">medRxiv, 2020</td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">2020</td>
-    </tr>
-<tr>
 <td class="gt_row gt_left">Revisiting neoantigen depletion signal in the untreated cancer genome</td>
       <td class="gt_row gt_left">S Wang, X Wang, T Wu, Z He, H Li, X Sun, XS Liu</td>
       <td class="gt_row gt_left">BioRxiv, 2020</td>
@@ -940,7 +944,7 @@
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="5">
-<strong>Update</strong>: 2020-08-21</td>
+<strong>Update</strong>: 2020-08-27</td>
     </tr></tfoot>
 </table></div>
 </div>
