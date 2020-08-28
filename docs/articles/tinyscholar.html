@@ -91,7 +91,7 @@
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinyscholar"</span>)</pre></body></html></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"ShixiangWang/tinyscholar"</span>)
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"ShixiangWang/tinyscholar"</span>)
 <span class="co"># devtools::install_git("https://gitee.com/ShixiangWang/tinyscholar")</span></pre></body></html></div>
 </div>
 <div id="usage" class="section level2">
@@ -107,8 +107,8 @@
 <span class="co">#&gt; Searching author Shixiang Wang</span>
 <span class="co">#&gt; Using API server: https://api.scaleserp.com</span>
 <span class="co">#&gt; Using Shixiang's personal API key, only 125 free searches per month for all packages users</span>
-<span class="co">#&gt; Search times used: 30</span>
-<span class="co">#&gt; Search times left: 95</span>
+<span class="co">#&gt; Search times used: 38</span>
+<span class="co">#&gt; Search times left: 87</span>
 <span class="co">#&gt;             id</span>
 <span class="co">#&gt; 1 FvNp0NkAAAAJ</span>
 <span class="co">#&gt;                                                                                               desc</span>
@@ -120,10 +120,10 @@
 <a href="#get-personal-profile" class="anchor"></a>Get Personal Profile</h3>
 <p>Then you can use function <code><a href="../reference/tinyscholar.html">tinyscholar()</a></code> to get the tidy data, which is a list of two <code>data.frame</code> with added <code>profile</code> class.</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">profile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tinyscholar.html">tinyscholar</a></span>(<span class="st">"FvNp0NkAAAAJ"</span>)
-<span class="co">#&gt; Using cache directory: /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp5WcC5m/tinyscholar</span>
-<span class="co">#&gt; Cannot find cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp5WcC5m/tinyscholar/unsorted_2020-08-27_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Using cache directory: /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//RtmpNTXCkb/tinyscholar</span>
+<span class="co">#&gt; Cannot find cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//RtmpNTXCkb/tinyscholar/unsorted_2020-08-28_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Try quering data from server: hiplot</span>
-<span class="co">#&gt; Save data to cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//Rtmp5WcC5m/tinyscholar/unsorted_2020-08-27_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Save data to cache file /var/folders/mx/rfkl27z90c96wbmn3_kjk8c80000gn/T//RtmpNTXCkb/tinyscholar/unsorted_2020-08-28_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Done</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">profile</span>, <span class="kw">max.level</span> <span class="kw">=</span> <span class="fl">1</span>)
 <span class="co">#&gt; List of 2</span>
@@ -142,7 +142,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ryjoeswcrm .gt_table {
+#njhazdmmgg .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -167,7 +167,7 @@
   border-left-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_heading {
+#njhazdmmgg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -179,7 +179,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_title {
+#njhazdmmgg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -189,7 +189,7 @@
   border-bottom-width: 0;
 }
 
-#ryjoeswcrm .gt_subtitle {
+#njhazdmmgg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -199,13 +199,13 @@
   border-top-width: 0;
 }
 
-#ryjoeswcrm .gt_bottom_border {
+#njhazdmmgg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_col_headings {
+#njhazdmmgg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -220,7 +220,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_col_heading {
+#njhazdmmgg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -240,7 +240,7 @@
   overflow-x: hidden;
 }
 
-#ryjoeswcrm .gt_column_spanner_outer {
+#njhazdmmgg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -252,15 +252,15 @@
   padding-right: 4px;
 }
 
-#ryjoeswcrm .gt_column_spanner_outer:first-child {
+#njhazdmmgg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ryjoeswcrm .gt_column_spanner_outer:last-child {
+#njhazdmmgg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ryjoeswcrm .gt_column_spanner {
+#njhazdmmgg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -272,7 +272,7 @@
   width: 100%;
 }
 
-#ryjoeswcrm .gt_group_heading {
+#njhazdmmgg .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -294,7 +294,7 @@
   vertical-align: middle;
 }
 
-#ryjoeswcrm .gt_empty_group_heading {
+#njhazdmmgg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -309,15 +309,15 @@
   vertical-align: middle;
 }
 
-#ryjoeswcrm .gt_from_md > :first-child {
+#njhazdmmgg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ryjoeswcrm .gt_from_md > :last-child {
+#njhazdmmgg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ryjoeswcrm .gt_row {
+#njhazdmmgg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -336,7 +336,7 @@
   overflow-x: hidden;
 }
 
-#ryjoeswcrm .gt_stub {
+#njhazdmmgg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -348,7 +348,7 @@
   padding-left: 12px;
 }
 
-#ryjoeswcrm .gt_summary_row {
+#njhazdmmgg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -358,7 +358,7 @@
   padding-right: 5px;
 }
 
-#ryjoeswcrm .gt_first_summary_row {
+#njhazdmmgg .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -368,7 +368,7 @@
   border-top-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_grand_summary_row {
+#njhazdmmgg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -378,7 +378,7 @@
   padding-right: 5px;
 }
 
-#ryjoeswcrm .gt_first_grand_summary_row {
+#njhazdmmgg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -388,11 +388,11 @@
   border-top-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_striped {
+#njhazdmmgg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ryjoeswcrm .gt_table_body {
+#njhazdmmgg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -401,7 +401,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_footnotes {
+#njhazdmmgg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -415,13 +415,13 @@
   border-right-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_footnote {
+#njhazdmmgg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ryjoeswcrm .gt_sourcenotes {
+#njhazdmmgg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -435,46 +435,46 @@
   border-right-color: #D3D3D3;
 }
 
-#ryjoeswcrm .gt_sourcenote {
+#njhazdmmgg .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ryjoeswcrm .gt_left {
+#njhazdmmgg .gt_left {
   text-align: left;
 }
 
-#ryjoeswcrm .gt_center {
+#njhazdmmgg .gt_center {
   text-align: center;
 }
 
-#ryjoeswcrm .gt_right {
+#njhazdmmgg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ryjoeswcrm .gt_font_normal {
+#njhazdmmgg .gt_font_normal {
   font-weight: normal;
 }
 
-#ryjoeswcrm .gt_font_bold {
+#njhazdmmgg .gt_font_bold {
   font-weight: bold;
 }
 
-#ryjoeswcrm .gt_font_italic {
+#njhazdmmgg .gt_font_italic {
   font-style: italic;
 }
 
-#ryjoeswcrm .gt_super {
+#njhazdmmgg .gt_super {
   font-size: 65%;
 }
 
-#ryjoeswcrm .gt_footnote_marks {
+#njhazdmmgg .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="ryjoeswcrm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="njhazdmmgg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="2" class="gt_heading gt_title gt_font_normal" style>Citations</th>
@@ -507,7 +507,7 @@
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="2">
-<strong>Update</strong>: 2020-08-27</td>
+<strong>Update</strong>: 2020-08-28</td>
     </tr></tfoot>
 </table></div>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">tb</span>$<span class="no">publications</span></pre></body></html></div>
@@ -515,7 +515,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tpgkjigdqk .gt_table {
+#yjfjqartdk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -540,7 +540,7 @@
   border-left-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_heading {
+#yjfjqartdk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -552,7 +552,7 @@
   border-right-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_title {
+#yjfjqartdk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -562,7 +562,7 @@
   border-bottom-width: 0;
 }
 
-#tpgkjigdqk .gt_subtitle {
+#yjfjqartdk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -572,13 +572,13 @@
   border-top-width: 0;
 }
 
-#tpgkjigdqk .gt_bottom_border {
+#yjfjqartdk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_col_headings {
+#yjfjqartdk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -593,7 +593,7 @@
   border-right-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_col_heading {
+#yjfjqartdk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -613,7 +613,7 @@
   overflow-x: hidden;
 }
 
-#tpgkjigdqk .gt_column_spanner_outer {
+#yjfjqartdk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -625,15 +625,15 @@
   padding-right: 4px;
 }
 
-#tpgkjigdqk .gt_column_spanner_outer:first-child {
+#yjfjqartdk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tpgkjigdqk .gt_column_spanner_outer:last-child {
+#yjfjqartdk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tpgkjigdqk .gt_column_spanner {
+#yjfjqartdk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -645,7 +645,7 @@
   width: 100%;
 }
 
-#tpgkjigdqk .gt_group_heading {
+#yjfjqartdk .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -667,7 +667,7 @@
   vertical-align: middle;
 }
 
-#tpgkjigdqk .gt_empty_group_heading {
+#yjfjqartdk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -682,15 +682,15 @@
   vertical-align: middle;
 }
 
-#tpgkjigdqk .gt_from_md > :first-child {
+#yjfjqartdk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tpgkjigdqk .gt_from_md > :last-child {
+#yjfjqartdk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tpgkjigdqk .gt_row {
+#yjfjqartdk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -709,7 +709,7 @@
   overflow-x: hidden;
 }
 
-#tpgkjigdqk .gt_stub {
+#yjfjqartdk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,7 +721,7 @@
   padding-left: 12px;
 }
 
-#tpgkjigdqk .gt_summary_row {
+#yjfjqartdk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -731,7 +731,7 @@
   padding-right: 5px;
 }
 
-#tpgkjigdqk .gt_first_summary_row {
+#yjfjqartdk .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -741,7 +741,7 @@
   border-top-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_grand_summary_row {
+#yjfjqartdk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -751,7 +751,7 @@
   padding-right: 5px;
 }
 
-#tpgkjigdqk .gt_first_grand_summary_row {
+#yjfjqartdk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -761,11 +761,11 @@
   border-top-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_striped {
+#yjfjqartdk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tpgkjigdqk .gt_table_body {
+#yjfjqartdk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -774,7 +774,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_footnotes {
+#yjfjqartdk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -788,13 +788,13 @@
   border-right-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_footnote {
+#yjfjqartdk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tpgkjigdqk .gt_sourcenotes {
+#yjfjqartdk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -808,46 +808,46 @@
   border-right-color: #D3D3D3;
 }
 
-#tpgkjigdqk .gt_sourcenote {
+#yjfjqartdk .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tpgkjigdqk .gt_left {
+#yjfjqartdk .gt_left {
   text-align: left;
 }
 
-#tpgkjigdqk .gt_center {
+#yjfjqartdk .gt_center {
   text-align: center;
 }
 
-#tpgkjigdqk .gt_right {
+#yjfjqartdk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tpgkjigdqk .gt_font_normal {
+#yjfjqartdk .gt_font_normal {
   font-weight: normal;
 }
 
-#tpgkjigdqk .gt_font_bold {
+#yjfjqartdk .gt_font_bold {
   font-weight: bold;
 }
 
-#tpgkjigdqk .gt_font_italic {
+#yjfjqartdk .gt_font_italic {
   font-style: italic;
 }
 
-#tpgkjigdqk .gt_super {
+#yjfjqartdk .gt_super {
   font-size: 65%;
 }
 
-#tpgkjigdqk .gt_footnote_marks {
+#yjfjqartdk .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="tpgkjigdqk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="yjfjqartdk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Publications</th>
@@ -944,7 +944,7 @@
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="5">
-<strong>Update</strong>: 2020-08-27</td>
+<strong>Update</strong>: 2020-08-28</td>
     </tr></tfoot>
 </table></div>
 </div>

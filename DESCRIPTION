@@ -1,5 +1,5 @@
 Package: tinyscholar
-Title: Get and Show Personal Google Scholar Profile
+Title: Get and Show Personal 'Google Scholar' Profile
 Version: 0.1.0
 Authors@R: 
     person(given = "Shixiang",
@@ -8,8 +8,8 @@ Authors@R:
            email = "w_shixiang@163.com",
            comment = c(ORCID = "0000-0001-9855-7357"))
 Maintainer: Shixiang Wang <w_shixiang@163.com>
-Description: A tiny package to get personal Google scholar
-    profile data from web api and show it in table or figure format.
+Description: Provides functions to get personal 'Google Scholar'
+    profile data from web API and show it in table or figure format.
 License: MIT + file LICENSE
 URL: https://github.com/ShixiangWang/tinyscholar
 BugReports: https://github.com/ShixiangWang/tinyscholar/issues
