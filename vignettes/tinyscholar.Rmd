@@ -44,8 +44,17 @@ library(tinyscholar)
 
 Firstly, you need to get your Google scholar ID from URL of your Google scholar profile or by running the following function with a keyword:
 
-```{r}
+```{r, eval=FALSE}
 scholar_search("Shixiang Wang")
+#> Searching author Shixiang Wang
+#> Using API server: https://api.scaleserp.com
+#> Using Shixiang's personal API key, only 125 free searches per month for all packages users
+#> Search times used: 38
+#> Search times left: 87
+#>             id
+#> 1 FvNp0NkAAAAJ
+#>                                                                                               desc
+#> 1 Wang, Shixiang (王诗翔)ShanghaiTech. UniversityVerified email at shanghaitech.edu.cnCited by 127
 ```
 
 Copy your ID and go to the next step.

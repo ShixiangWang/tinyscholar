@@ -32,6 +32,8 @@ Search Google Scholar Highly Related Papers or Author
 x <- scholar_search("Shixiang Wang")
 x
 x <- scholar_search("Shixiang Wang", is_author = FALSE)
-x$gt
+if (!is.null(x)) {
+  x$gt
+}
 }
 }

@@ -1,6 +1,6 @@
 Package: tinyscholar
 Title: Get and Show Personal 'Google Scholar' Profile
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Shixiang",
            family = "Wang",
@@ -14,6 +14,7 @@ License: MIT + file LICENSE
 URL: https://github.com/ShixiangWang/tinyscholar
 BugReports: https://github.com/ShixiangWang/tinyscholar/issues
 Imports: 
+    curl,
     dplyr,
     ggplot2,
     gt,

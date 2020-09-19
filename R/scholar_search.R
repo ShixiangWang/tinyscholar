@@ -14,7 +14,9 @@
 #' x <- scholar_search("Shixiang Wang")
 #' x
 #' x <- scholar_search("Shixiang Wang", is_author = FALSE)
-#' x$gt
+#' if (!is.null(x)) {
+#'   x$gt
+#' }
 #' }
 scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.scaleserp.com", server_key = NULL) {
   stopifnot(is.character(keyword), length(keyword) == 1, is.character(server_url), length(server_url) == 1)
@@ -38,10 +40,19 @@ scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.
     "&include_html=true&hl=en&scholar_include_citations=true&search_type=scholar&output=json&num=100"
   )
 
-  x <- jsonlite::read_json(query_url)
+  x <- tryCatch(
+    suppressWarnings(jsonlite::read_json(query_url)),
+    error = function(e) {
+      x <- curl::curl_fetch_memory(query_url)
+      jsonlite::fromJSON(rawToChar(x$content))
+    }
+  )
 
   if (!x$request_info$success) {
-    message("No free searches left.")
+    message("No free searches left this month.")
+    if (server_key == "4E4D8A41324841C9A283A8F520775132") {
+      message("You can apply your own key at https://scaleserp.com/")
+    }
     return(invisible(NULL))
   }
 
