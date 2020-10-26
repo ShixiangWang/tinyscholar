@@ -1,6 +1,6 @@
 Package: tinyscholar
 Title: Get and Show Personal 'Google Scholar' Profile
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Shixiang",
            family = "Wang",
@@ -24,7 +24,8 @@ Imports:
     rlang (>= 0.1.2),
     rvest,
     stringr,
-    xml2
+    xml2,
+    R.utils
 Suggests: 
     knitr,
     rmarkdown,

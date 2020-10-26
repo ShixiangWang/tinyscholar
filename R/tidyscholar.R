@@ -2,7 +2,6 @@
 #'
 #' @param id Your google scholar identifier. You can find it in the URL of your google scholar profile.
 #' @param sortby_date Logical. If `TRUE`, the publications are sorted by date.
-#' @param server Web api server, default is [hiplot platform](https://hiplot.com.cn/).
 #' @param use_cache If `TRUE` (default), store data to a cache file to avoid querying in next time within a day.
 #' The store file is identical for each person and each date.
 #' @param cache_dir A directory path.
@@ -19,10 +18,9 @@
 #' pl <- scholar_plot(r)
 #' pl$citations
 #' pl$publications
-tinyscholar <- function(id, sortby_date = FALSE, server = c("hiplot", "cse"),
+tinyscholar <- function(id, sortby_date = FALSE,
                         use_cache = TRUE, cache_dir = file.path(tempdir(), "tinyscholar")) {
   stopifnot(is.character(id), length(id) == 1)
-  server <- match.arg(server)
 
   if (use_cache) {
     message("Using cache directory: ", cache_dir)
@@ -42,14 +40,20 @@ tinyscholar <- function(id, sortby_date = FALSE, server = c("hiplot", "cse"),
     }
   }
 
-  if (server == "hiplot") {
-    server_url <- "https://api.hiplot.org/google/scholar.php"
-  } else {
-    server_url <- "http://cse.bth.se/~fer/googlescholar-api/googlescholar.php"
-  }
+  server_url1 <- "https://api.hiplot.org/google/scholar.php"
+  server_url2 <- "http://cse.bth.se/~fer/googlescholar-api/googlescholar.php"
 
-  url <- paste0(
-    server_url,
+  url1 <- paste0(
+    server_url1,
+    "?user=",
+    id,
+    ifelse(sortby_date,
+      "%26view_op=list_works%26sortby=pubdate",
+      ""
+    )
+  )
+  url2 <- paste0(
+    server_url2,
     "?user=",
     id,
     ifelse(sortby_date,
@@ -58,9 +62,27 @@ tinyscholar <- function(id, sortby_date = FALSE, server = c("hiplot", "cse"),
     )
   )
 
-  message("Try quering data from server: ", server)
+  r <- tryCatch(
+    expr = {
+      message("Try quering data from server: hiplot")
+      R.utils::withTimeout(
+        {
+          suppressWarnings(jsonlite::read_json(url1, simplifyVector = TRUE))
+        },
+        timeout = 5
+      )
+    },
+    error = function(ex) {
+      message("Timeout/error when use hiplot server. Switch to use the server: cse.")
+      R.utils::withTimeout(
+        {
+          suppressWarnings(jsonlite::read_json(url2, simplifyVector = TRUE))
+        },
+        timeout = 30
+      )
+    }
+  )
 
-  r <- jsonlite::read_json(url, simplifyVector = TRUE)
   r$citations_per_year <- sapply(r$citations_per_year, function(x) x)
   # r$publications$title <- gsub("&#8217;", "'", r$publications$title)
   r$publications <- lapply(r$publications, function(x) gsub("(&#8217;)|(&#39;)", "'", x)) %>%

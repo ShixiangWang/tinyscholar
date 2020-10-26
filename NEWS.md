@@ -1,3 +1,7 @@
+# tinyscholar 0.1.2
+
+* Removed `server` option and auto-select servers with time limite.
+
 # tinyscholar 0.1.1
 
 * Added robust code to check if there is query time left, and remind user to create one if necessary.

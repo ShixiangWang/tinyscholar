@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tinyscholar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -70,7 +70,8 @@
 
       
 
-      </header><script src="tinyscholar_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="tinyscholar_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="tinyscholar_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="tinyscholar_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>tinyscholar</h1>
@@ -88,22 +89,26 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of tinyscholar from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinyscholar"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tinyscholar"</span><span class="op">)</span></pre></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"ShixiangWang/tinyscholar"</span>)
-<span class="co"># devtools::install_git("https://gitee.com/ShixiangWang/tinyscholar")</span></pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"ShixiangWang/tinyscholar"</span><span class="op">)</span>
+<span class="co"># devtools::install_git("https://gitee.com/ShixiangWang/tinyscholar")</span></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>Here I will use my profile as an example.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tinyscholar</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ShixiangWang/tinyscholar">tinyscholar</a></span><span class="op">)</span></pre></div>
 <div id="get-you-google-scholar-id" class="section level3">
 <h3 class="hasAnchor">
 <a href="#get-you-google-scholar-id" class="anchor"></a>Get You Google Scholar ID</h3>
 <p>Firstly, you need to get your Google scholar ID from URL of your Google scholar profile or by running the following function with a keyword:</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/scholar_search.html">scholar_search</a></span>(<span class="st">"Shixiang Wang"</span>)
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="../reference/scholar_search.html">scholar_search</a></span><span class="op">(</span><span class="st">"Shixiang Wang"</span><span class="op">)</span>
 <span class="co">#&gt; Searching author Shixiang Wang</span>
 <span class="co">#&gt; Using API server: https://api.scaleserp.com</span>
 <span class="co">#&gt; Using Shixiang's personal API key, only 125 free searches per month for all packages users</span>
@@ -112,37 +117,40 @@
 <span class="co">#&gt;             id</span>
 <span class="co">#&gt; 1 FvNp0NkAAAAJ</span>
 <span class="co">#&gt;                                                                                               desc</span>
-<span class="co">#&gt; 1 Wang, Shixiang (王诗翔)ShanghaiTech. UniversityVerified email at shanghaitech.edu.cnCited by 127</span></pre></body></html></div>
+<span class="co">#&gt; 1 Wang, Shixiang (王诗翔)ShanghaiTech. UniversityVerified email at shanghaitech.edu.cnCited by 127</span></pre></div>
 <p>Copy your ID and go to the next step.</p>
 </div>
 <div id="get-personal-profile" class="section level3">
 <h3 class="hasAnchor">
 <a href="#get-personal-profile" class="anchor"></a>Get Personal Profile</h3>
 <p>Then you can use function <code><a href="../reference/tinyscholar.html">tinyscholar()</a></code> to get the tidy data, which is a list of two <code>data.frame</code> with added <code>profile</code> class.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">profile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tinyscholar.html">tinyscholar</a></span>(<span class="st">"FvNp0NkAAAAJ"</span>)
-<span class="co">#&gt; Using cache directory: /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//Rtmpe6ZvqU/tinyscholar</span>
-<span class="co">#&gt; Cannot find cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//Rtmpe6ZvqU/tinyscholar/unsorted_2020-09-19_FvNp0NkAAAAJ.rds</span>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="va">profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/tinyscholar.html">tinyscholar</a></span><span class="op">(</span><span class="st">"FvNp0NkAAAAJ"</span><span class="op">)</span>
+<span class="co">#&gt; Using cache directory: /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//Rtmp3uypKm/tinyscholar</span>
+<span class="co">#&gt; Cannot find cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//Rtmp3uypKm/tinyscholar/unsorted_2020-10-26_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Try quering data from server: hiplot</span>
-<span class="co">#&gt; Save data to cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//Rtmpe6ZvqU/tinyscholar/unsorted_2020-09-19_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Timeout/error when use hiplot server. Switch to use the server: cse.</span>
+<span class="co">#&gt; Save data to cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//Rtmp3uypKm/tinyscholar/unsorted_2020-10-26_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Done</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">profile</span>, <span class="kw">max.level</span> <span class="kw">=</span> <span class="fl">1</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">profile</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; List of 2</span>
 <span class="co">#&gt;  $ publications:'data.frame':    11 obs. of  5 variables:</span>
 <span class="co">#&gt;  $ citations   :'data.frame':    4 obs. of  2 variables:</span>
-<span class="co">#&gt;  - attr(*, "class")= chr [1:2] "ScholarProfile" "list"</span></pre></body></html></div>
+<span class="co">#&gt;  - attr(*, "class")= chr [1:2] "ScholarProfile" "list"</span></pre></div>
 <p>You can use this data in your way. The following parts provide two simple ways to show the profile.</p>
 </div>
 <div id="show-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#show-table" class="anchor"></a>Show Table</h3>
 <p>Table is the best way to show the scholar profile. Tinyscholar uses <a href="https://gt.rstudio.com/index.html">gt</a> package to generate tables which can be easily modified.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">tb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/scholar_table.html">scholar_table</a></span>(<span class="no">profile</span>)
-<span class="no">tb</span>$<span class="no">citations</span></pre></body></html></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="va">tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scholar_table.html">scholar_table</a></span><span class="op">(</span><span class="va">profile</span><span class="op">)</span>
+<span class="va">tb</span><span class="op">$</span><span class="va">citations</span></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#uyshokfmrr .gt_table {
+#wrurmlgvil .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -167,7 +175,7 @@
   border-left-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_heading {
+#wrurmlgvil .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -179,7 +187,7 @@
   border-right-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_title {
+#wrurmlgvil .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -189,7 +197,7 @@
   border-bottom-width: 0;
 }
 
-#uyshokfmrr .gt_subtitle {
+#wrurmlgvil .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -199,13 +207,13 @@
   border-top-width: 0;
 }
 
-#uyshokfmrr .gt_bottom_border {
+#wrurmlgvil .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_col_headings {
+#wrurmlgvil .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -220,7 +228,7 @@
   border-right-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_col_heading {
+#wrurmlgvil .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -240,7 +248,7 @@
   overflow-x: hidden;
 }
 
-#uyshokfmrr .gt_column_spanner_outer {
+#wrurmlgvil .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -252,15 +260,15 @@
   padding-right: 4px;
 }
 
-#uyshokfmrr .gt_column_spanner_outer:first-child {
+#wrurmlgvil .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uyshokfmrr .gt_column_spanner_outer:last-child {
+#wrurmlgvil .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uyshokfmrr .gt_column_spanner {
+#wrurmlgvil .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -272,7 +280,7 @@
   width: 100%;
 }
 
-#uyshokfmrr .gt_group_heading {
+#wrurmlgvil .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -294,7 +302,7 @@
   vertical-align: middle;
 }
 
-#uyshokfmrr .gt_empty_group_heading {
+#wrurmlgvil .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -309,15 +317,15 @@
   vertical-align: middle;
 }
 
-#uyshokfmrr .gt_from_md > :first-child {
+#wrurmlgvil .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uyshokfmrr .gt_from_md > :last-child {
+#wrurmlgvil .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uyshokfmrr .gt_row {
+#wrurmlgvil .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -336,7 +344,7 @@
   overflow-x: hidden;
 }
 
-#uyshokfmrr .gt_stub {
+#wrurmlgvil .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -348,7 +356,7 @@
   padding-left: 12px;
 }
 
-#uyshokfmrr .gt_summary_row {
+#wrurmlgvil .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -358,7 +366,7 @@
   padding-right: 5px;
 }
 
-#uyshokfmrr .gt_first_summary_row {
+#wrurmlgvil .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -368,7 +376,7 @@
   border-top-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_grand_summary_row {
+#wrurmlgvil .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -378,7 +386,7 @@
   padding-right: 5px;
 }
 
-#uyshokfmrr .gt_first_grand_summary_row {
+#wrurmlgvil .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -388,11 +396,11 @@
   border-top-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_striped {
+#wrurmlgvil .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uyshokfmrr .gt_table_body {
+#wrurmlgvil .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -401,7 +409,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_footnotes {
+#wrurmlgvil .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -415,13 +423,13 @@
   border-right-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_footnote {
+#wrurmlgvil .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#uyshokfmrr .gt_sourcenotes {
+#wrurmlgvil .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -435,46 +443,46 @@
   border-right-color: #D3D3D3;
 }
 
-#uyshokfmrr .gt_sourcenote {
+#wrurmlgvil .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#uyshokfmrr .gt_left {
+#wrurmlgvil .gt_left {
   text-align: left;
 }
 
-#uyshokfmrr .gt_center {
+#wrurmlgvil .gt_center {
   text-align: center;
 }
 
-#uyshokfmrr .gt_right {
+#wrurmlgvil .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uyshokfmrr .gt_font_normal {
+#wrurmlgvil .gt_font_normal {
   font-weight: normal;
 }
 
-#uyshokfmrr .gt_font_bold {
+#wrurmlgvil .gt_font_bold {
   font-weight: bold;
 }
 
-#uyshokfmrr .gt_font_italic {
+#wrurmlgvil .gt_font_italic {
   font-style: italic;
 }
 
-#uyshokfmrr .gt_super {
+#wrurmlgvil .gt_super {
   font-size: 65%;
 }
 
-#uyshokfmrr .gt_footnote_marks {
+#wrurmlgvil .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="uyshokfmrr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="wrurmlgvil" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="2" class="gt_heading gt_title gt_font_normal" style>Citations</th>
@@ -490,7 +498,7 @@
 <tbody class="gt_table_body">
 <tr>
 <td class="gt_row gt_left">total</td>
-      <td class="gt_row gt_center">127</td>
+      <td class="gt_row gt_center">140</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">2018</td>
@@ -502,20 +510,21 @@
     </tr>
 <tr>
 <td class="gt_row gt_left">2020</td>
-      <td class="gt_row gt_center">90</td>
+      <td class="gt_row gt_center">103</td>
     </tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="2">
-<strong>Update</strong>: 2020-09-19</td>
+<strong>Update</strong>: 2020-10-26</td>
     </tr></tfoot>
 </table></div>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">tb</span>$<span class="no">publications</span></pre></body></html></div>
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="va">tb</span><span class="op">$</span><span class="va">publications</span></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#wrqhfppmzu .gt_table {
+#klprcxxgff .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -540,7 +549,7 @@
   border-left-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_heading {
+#klprcxxgff .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -552,7 +561,7 @@
   border-right-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_title {
+#klprcxxgff .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -562,7 +571,7 @@
   border-bottom-width: 0;
 }
 
-#wrqhfppmzu .gt_subtitle {
+#klprcxxgff .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -572,13 +581,13 @@
   border-top-width: 0;
 }
 
-#wrqhfppmzu .gt_bottom_border {
+#klprcxxgff .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_col_headings {
+#klprcxxgff .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -593,7 +602,7 @@
   border-right-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_col_heading {
+#klprcxxgff .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -613,7 +622,7 @@
   overflow-x: hidden;
 }
 
-#wrqhfppmzu .gt_column_spanner_outer {
+#klprcxxgff .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -625,15 +634,15 @@
   padding-right: 4px;
 }
 
-#wrqhfppmzu .gt_column_spanner_outer:first-child {
+#klprcxxgff .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wrqhfppmzu .gt_column_spanner_outer:last-child {
+#klprcxxgff .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wrqhfppmzu .gt_column_spanner {
+#klprcxxgff .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -645,7 +654,7 @@
   width: 100%;
 }
 
-#wrqhfppmzu .gt_group_heading {
+#klprcxxgff .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -667,7 +676,7 @@
   vertical-align: middle;
 }
 
-#wrqhfppmzu .gt_empty_group_heading {
+#klprcxxgff .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -682,15 +691,15 @@
   vertical-align: middle;
 }
 
-#wrqhfppmzu .gt_from_md > :first-child {
+#klprcxxgff .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wrqhfppmzu .gt_from_md > :last-child {
+#klprcxxgff .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wrqhfppmzu .gt_row {
+#klprcxxgff .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -709,7 +718,7 @@
   overflow-x: hidden;
 }
 
-#wrqhfppmzu .gt_stub {
+#klprcxxgff .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,7 +730,7 @@
   padding-left: 12px;
 }
 
-#wrqhfppmzu .gt_summary_row {
+#klprcxxgff .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -731,7 +740,7 @@
   padding-right: 5px;
 }
 
-#wrqhfppmzu .gt_first_summary_row {
+#klprcxxgff .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -741,7 +750,7 @@
   border-top-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_grand_summary_row {
+#klprcxxgff .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -751,7 +760,7 @@
   padding-right: 5px;
 }
 
-#wrqhfppmzu .gt_first_grand_summary_row {
+#klprcxxgff .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -761,11 +770,11 @@
   border-top-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_striped {
+#klprcxxgff .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wrqhfppmzu .gt_table_body {
+#klprcxxgff .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -774,7 +783,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_footnotes {
+#klprcxxgff .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -788,13 +797,13 @@
   border-right-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_footnote {
+#klprcxxgff .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#wrqhfppmzu .gt_sourcenotes {
+#klprcxxgff .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -808,46 +817,46 @@
   border-right-color: #D3D3D3;
 }
 
-#wrqhfppmzu .gt_sourcenote {
+#klprcxxgff .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#wrqhfppmzu .gt_left {
+#klprcxxgff .gt_left {
   text-align: left;
 }
 
-#wrqhfppmzu .gt_center {
+#klprcxxgff .gt_center {
   text-align: center;
 }
 
-#wrqhfppmzu .gt_right {
+#klprcxxgff .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wrqhfppmzu .gt_font_normal {
+#klprcxxgff .gt_font_normal {
   font-weight: normal;
 }
 
-#wrqhfppmzu .gt_font_bold {
+#klprcxxgff .gt_font_bold {
   font-weight: bold;
 }
 
-#wrqhfppmzu .gt_font_italic {
+#klprcxxgff .gt_font_italic {
   font-style: italic;
 }
 
-#wrqhfppmzu .gt_super {
+#klprcxxgff .gt_super {
   font-size: 65%;
 }
 
-#wrqhfppmzu .gt_footnote_marks {
+#klprcxxgff .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="wrqhfppmzu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="klprcxxgff" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Publications</th>
@@ -868,28 +877,28 @@
 <td class="gt_row gt_left">APOBEC3B and APOBEC mutational signature as potential predictive markers for immunotherapy response in non-small cell lung cancer</td>
       <td class="gt_row gt_left">S Wang, M Jia, Z He, XS Liu</td>
       <td class="gt_row gt_left">Oncogene 37 (29), 3924-3936, 2018</td>
-      <td class="gt_row gt_left">57</td>
+      <td class="gt_row gt_left">62</td>
       <td class="gt_row gt_left">2018</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction</td>
       <td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, XS Liu</td>
       <td class="gt_row gt_left">eLife, 2019</td>
-      <td class="gt_row gt_left">23</td>
+      <td class="gt_row gt_left">25</td>
       <td class="gt_row gt_left">2019</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">Sex Differences in Cancer Immunotherapy Efficacy, Biomarkers, and Therapeutic Strategy</td>
       <td class="gt_row gt_left">S Wang, LA Cowley, XS Liu</td>
       <td class="gt_row gt_left">Molecules 24 (18), 3214, 2019</td>
-      <td class="gt_row gt_left">21</td>
+      <td class="gt_row gt_left">23</td>
       <td class="gt_row gt_left">2019</td>
     </tr>
 <tr>
 <td class="gt_row gt_left">The predictive power of tumor mutational burden in lung cancer immunotherapy response is influenced by patients' sex</td>
       <td class="gt_row gt_left">S Wang, J Zhang, Z He, K Wu, XS Liu</td>
       <td class="gt_row gt_left">International journal of cancer 145 (10), 2840-2849, 2019</td>
-      <td class="gt_row gt_left">19</td>
+      <td class="gt_row gt_left">22</td>
       <td class="gt_row gt_left">2019</td>
     </tr>
 <tr>
@@ -914,6 +923,13 @@
       <td class="gt_row gt_left">2020</td>
     </tr>
 <tr>
+<td class="gt_row gt_left">Ras Downstream Effector GGCT Alleviates Oncogenic Stress</td>
+      <td class="gt_row gt_left">Z He, S Wang, Y Shao, J Zhang, X Wu, Y Chen, J Hu, F Zhang, XS Liu</td>
+      <td class="gt_row gt_left">iScience 19, 256-266, 2019</td>
+      <td class="gt_row gt_left">1</td>
+      <td class="gt_row gt_left">2019</td>
+    </tr>
+<tr>
 <td class="gt_row gt_left">UCSCXenaShiny: an R package for exploring and analyzing UCSC Xena public datasets in web browser</td>
       <td class="gt_row gt_left">S Wang, Y Xiong, K Gu, L Zhao, Y Li, F Zhao, X Li, XS Liu</td>
       <td class="gt_row gt_left">Preprints, 2020</td>
@@ -934,17 +950,10 @@
       <td class="gt_row gt_left">0</td>
       <td class="gt_row gt_left">2020</td>
     </tr>
-<tr>
-<td class="gt_row gt_left">Ras Downstream Effector GGCT Alleviates Oncogenic Stress</td>
-      <td class="gt_row gt_left">Z He, S Wang, Y Shao, J Zhang, X Wu, Y Chen, J Hu, F Zhang, XS Liu</td>
-      <td class="gt_row gt_left">iScience 19, 256-266, 2019</td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">2019</td>
-    </tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="5">
-<strong>Update</strong>: 2020-09-19</td>
+<strong>Update</strong>: 2020-10-26</td>
     </tr></tfoot>
 </table></div>
 </div>
@@ -952,10 +961,12 @@
 <h3 class="hasAnchor">
 <a href="#show-plot" class="anchor"></a>Show Plot</h3>
 <p>Similarly, you can show numeric data with ggplot2 package.</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">pl</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/scholar_plot.html">scholar_plot</a></span>(<span class="no">profile</span>)
-<span class="no">pl</span>$<span class="no">citations</span></pre></body></html></div>
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scholar_plot.html">scholar_plot</a></span><span class="op">(</span><span class="va">profile</span><span class="op">)</span>
+<span class="va">pl</span><span class="op">$</span><span class="va">citations</span></pre></div>
 <p><img src="tinyscholar_files/figure-html/unnamed-chunk-6-1.png" width="700" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">pl</span>$<span class="no">publications</span></pre></body></html></div>
+<div class="sourceCode" id="cb9"><pre class="downlit">
+<span class="va">pl</span><span class="op">$</span><span class="va">publications</span></pre></div>
 <p><img src="tinyscholar_files/figure-html/unnamed-chunk-6-2.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -981,7 +992,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -7,7 +7,6 @@
 tinyscholar(
   id,
   sortby_date = FALSE,
-  server = c("hiplot", "cse"),
   use_cache = TRUE,
   cache_dir = file.path(tempdir(), "tinyscholar")
 )
@@ -16,8 +15,6 @@ tinyscholar(
 \item{id}{Your google scholar identifier. You can find it in the URL of your google scholar profile.}
 
 \item{sortby_date}{Logical. If \code{TRUE}, the publications are sorted by date.}
-
-\item{server}{Web api server, default is \href{https://hiplot.com.cn/}{hiplot platform}.}
 
 \item{use_cache}{If \code{TRUE} (default), store data to a cache file to avoid querying in next time within a day.
 The store file is identical for each person and each date.}
