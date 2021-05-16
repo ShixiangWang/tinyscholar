@@ -16,7 +16,7 @@ scholar_search(
 
 \item{is_author}{Default is \code{TRUE}, find author information, if \code{FALSE}, return the first page result in search engine.}
 
-\item{server_url}{Server URL, here I use \href{https://scaleserp.com/google-scholar-api}{Scale SERP API}.}
+\item{server_url}{Server URL, here I use \href{https://www.scaleserp.com/google-scholar-api}{Scale SERP API}.}
 
 \item{server_key}{Key for searching data, you can obtain it from URL above. If not set, use personal key from Shixiang.
 Total 125 free searches per month.}

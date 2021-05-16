@@ -2,7 +2,7 @@
 #'
 #' @param keyword A keyword, can be author name, e.g. "Shixiang Wang".
 #' @param is_author Default is `TRUE`, find author information, if `FALSE`, return the first page result in search engine.
-#' @param server_url Server URL, here I use [Scale SERP API](https://scaleserp.com/google-scholar-api).
+#' @param server_url Server URL, here I use [Scale SERP API](https://www.scaleserp.com/google-scholar-api).
 #' @param server_key Key for searching data, you can obtain it from URL above. If not set, use personal key from Shixiang.
 #' Total 125 free searches per month.
 #'

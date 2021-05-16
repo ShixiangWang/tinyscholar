@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/tinyscholar)](https://CRAN.R-project.org/package=tinyscholar)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/tinyscholar)](https://cran.r-project.org/package=tinyscholar)
