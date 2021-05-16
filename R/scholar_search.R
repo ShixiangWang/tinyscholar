@@ -61,7 +61,12 @@ scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.
 
   if (is_author) {
     page <- xml2::read_html(x$html)
-    z <- rvest::html_nodes(page, xpath = "/html/body/div/div[10]/div[2]/div[2]/div[2]/div[1]/table")
+    z <- rvest::html_nodes(page, xpath = "/html/body/div/div[9]/div[2]/div[2]/div[2]/div[1]/table")
+    if (length(z) < 1) {
+      message("No info found, the XPath to query info may be changed, please report to the developer.\nNULL will be returned!")
+      return(invisible(NULL))
+    }
+
     text <- rvest::html_text(z)
     loc <- stringr::str_locate_all(text, "Cited by [0-9]+")[[1]][, 2]
     loc_list <- split(sort(c(loc[-length(loc)], c(0, 1e4, loc[-length(loc)]) + 1)), rep(seq_along(loc), each = 2))
