@@ -89,14 +89,19 @@ scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.
 
     return(authors)
   } else {
-    xx <- x$scholar_results %>%
-      purrr::transpose() %>%
-      purrr::map(unlist) %>%
-      as.data.frame()
-    xx$position <- NULL
-    return(list(
-      data = xx,
-      gt = gt::gt(xx)
-    ))
+    if (!is.null(x$scholar_results)) {
+      xx <- x$scholar_results %>%
+        purrr::transpose() %>%
+        purrr::map(unlist) %>%
+        as.data.frame()
+      xx$position <- NULL
+      return(list(
+        data = xx,
+        gt = gt::gt(xx)
+      ))
+    }
+
+    message("No data found in this query. Maybe try again?")
+    return(invisible(NULL))
   }
 }

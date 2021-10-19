@@ -70,7 +70,7 @@
 
       
 
-      </header><script src="tinyscholar_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+      </header><script src="tinyscholar_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>tinyscholar</h1>
@@ -125,14 +125,15 @@
 <p>Then you can use function <code><a href="../reference/tinyscholar.html">tinyscholar()</a></code> to get the tidy data, which is a list of two <code>data.frame</code> with added <code>profile</code> class.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/tinyscholar.html">tinyscholar</a></span><span class="op">(</span><span class="st">"FvNp0NkAAAAJ"</span><span class="op">)</span>
-<span class="co">#&gt; Using cache directory: /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpCCA1l0/tinyscholar</span>
-<span class="co">#&gt; Cannot find cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpCCA1l0/tinyscholar/unsorted_2021-05-16_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Using cache directory: /Volumes/Extra/R/Rtmp//RtmpINp20V/tinyscholar</span>
+<span class="co">#&gt; Cannot find cache file /Volumes/Extra/R/Rtmp//RtmpINp20V/tinyscholar/unsorted_2021-10-19_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Try quering data from server: hiplot</span>
-<span class="co">#&gt; Save data to cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpCCA1l0/tinyscholar/unsorted_2021-05-16_FvNp0NkAAAAJ.rds</span>
+<span class="co">#&gt; Timeout/error when use hiplot server. Switch to use the server: cse.</span>
+<span class="co">#&gt; Save data to cache file /Volumes/Extra/R/Rtmp//RtmpINp20V/tinyscholar/unsorted_2021-10-19_FvNp0NkAAAAJ.rds</span>
 <span class="co">#&gt; Done</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">profile</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; List of 2</span>
-<span class="co">#&gt;  $ publications:'data.frame':    13 obs. of  5 variables:</span>
+<span class="co">#&gt;  $ publications:'data.frame':    16 obs. of  5 variables:</span>
 <span class="co">#&gt;  $ citations   :'data.frame':    5 obs. of  2 variables:</span>
 <span class="co">#&gt;  - attr(*, "class")= chr [1:2] "ScholarProfile" "list"</span></code></pre></div>
 <p>You can use this data in your way. The following parts provide two simple ways to show the profile.</p>
@@ -144,11 +145,12 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scholar_table.html">scholar_table</a></span><span class="op">(</span><span class="va">profile</span><span class="op">)</span>
 <span class="va">tb</span><span class="op">$</span><span class="va">citations</span></code></pre></div>
+<div id="qsrxkfwisj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#iftvtzanol .gt_table {
+#qsrxkfwisj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -173,7 +175,7 @@
   border-left-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_heading {
+#qsrxkfwisj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -185,7 +187,7 @@
   border-right-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_title {
+#qsrxkfwisj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -195,23 +197,23 @@
   border-bottom-width: 0;
 }
 
-#iftvtzanol .gt_subtitle {
+#qsrxkfwisj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
   padding-top: 0;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#iftvtzanol .gt_bottom_border {
+#qsrxkfwisj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_col_headings {
+#qsrxkfwisj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -226,7 +228,7 @@
   border-right-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_col_heading {
+#qsrxkfwisj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -246,7 +248,7 @@
   overflow-x: hidden;
 }
 
-#iftvtzanol .gt_column_spanner_outer {
+#qsrxkfwisj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -258,27 +260,27 @@
   padding-right: 4px;
 }
 
-#iftvtzanol .gt_column_spanner_outer:first-child {
+#qsrxkfwisj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iftvtzanol .gt_column_spanner_outer:last-child {
+#qsrxkfwisj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iftvtzanol .gt_column_spanner {
+#qsrxkfwisj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
   vertical-align: bottom;
   padding-top: 5px;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
 }
 
-#iftvtzanol .gt_group_heading {
+#qsrxkfwisj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -300,7 +302,7 @@
   vertical-align: middle;
 }
 
-#iftvtzanol .gt_empty_group_heading {
+#qsrxkfwisj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -315,15 +317,15 @@
   vertical-align: middle;
 }
 
-#iftvtzanol .gt_from_md > :first-child {
+#qsrxkfwisj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iftvtzanol .gt_from_md > :last-child {
+#qsrxkfwisj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iftvtzanol .gt_row {
+#qsrxkfwisj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -342,7 +344,7 @@
   overflow-x: hidden;
 }
 
-#iftvtzanol .gt_stub {
+#qsrxkfwisj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -354,7 +356,7 @@
   padding-left: 12px;
 }
 
-#iftvtzanol .gt_summary_row {
+#qsrxkfwisj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -364,7 +366,7 @@
   padding-right: 5px;
 }
 
-#iftvtzanol .gt_first_summary_row {
+#qsrxkfwisj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,7 +376,7 @@
   border-top-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_grand_summary_row {
+#qsrxkfwisj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -384,7 +386,7 @@
   padding-right: 5px;
 }
 
-#iftvtzanol .gt_first_grand_summary_row {
+#qsrxkfwisj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -394,11 +396,11 @@
   border-top-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_striped {
+#qsrxkfwisj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iftvtzanol .gt_table_body {
+#qsrxkfwisj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -407,7 +409,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_footnotes {
+#qsrxkfwisj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -421,13 +423,13 @@
   border-right-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_footnote {
+#qsrxkfwisj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#iftvtzanol .gt_sourcenotes {
+#qsrxkfwisj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -441,91 +443,89 @@
   border-right-color: #D3D3D3;
 }
 
-#iftvtzanol .gt_sourcenote {
+#qsrxkfwisj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#iftvtzanol .gt_left {
+#qsrxkfwisj .gt_left {
   text-align: left;
 }
 
-#iftvtzanol .gt_center {
+#qsrxkfwisj .gt_center {
   text-align: center;
 }
 
-#iftvtzanol .gt_right {
+#qsrxkfwisj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iftvtzanol .gt_font_normal {
+#qsrxkfwisj .gt_font_normal {
   font-weight: normal;
 }
 
-#iftvtzanol .gt_font_bold {
+#qsrxkfwisj .gt_font_bold {
   font-weight: bold;
 }
 
-#iftvtzanol .gt_font_italic {
+#qsrxkfwisj .gt_font_italic {
   font-style: italic;
 }
 
-#iftvtzanol .gt_super {
+#qsrxkfwisj .gt_super {
   font-size: 65%;
 }
 
-#iftvtzanol .gt_footnote_marks {
+#qsrxkfwisj .gt_footnote_marks {
   font-style: italic;
+  font-weight: normal;
   font-size: 65%;
 }
 </style>
-<div id="iftvtzanol" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
-<thead class="gt_header">
-<tr>
-<th colspan="2" class="gt_heading gt_title gt_font_normal" style>Citations</th>
-    </tr>
-<tr>
-<th colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
-    </tr>
-</thead>
+<table class="table gt_table">
+<thead class="gt_header"><tr>
+<th colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Citations</th>
+    </tr></thead>
 <thead class="gt_col_headings"><tr>
 <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">when</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">count</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">count</th>
     </tr></thead>
 <tbody class="gt_table_body">
 <tr>
 <td class="gt_row gt_left">total</td>
-      <td class="gt_row gt_center">226</td>
-    </tr>
+<td class="gt_row gt_right">306</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">2018</td>
-      <td class="gt_row gt_center">1</td>
-    </tr>
+<td class="gt_row gt_right">1</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">2019</td>
-      <td class="gt_row gt_center">34</td>
-    </tr>
+<td class="gt_row gt_right">32</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">2020</td>
-      <td class="gt_row gt_center">123</td>
-    </tr>
+<td class="gt_row gt_right">123</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">2021</td>
-      <td class="gt_row gt_center">65</td>
-    </tr>
+<td class="gt_row gt_right">146</td>
+</tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="2">
-<strong>Update</strong>: 2021-05-16</td>
+<strong>Update</strong>: 2021-10-19</td>
     </tr></tfoot>
-</table></div>
+</table>
+</div>
 tb$publications
+<div id="yzlaxrqbba" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#kbybhdrhsc .gt_table {
+#yzlaxrqbba .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -550,7 +550,7 @@ tb$publications
   border-left-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_heading {
+#yzlaxrqbba .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -562,7 +562,7 @@ tb$publications
   border-right-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_title {
+#yzlaxrqbba .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -572,23 +572,23 @@ tb$publications
   border-bottom-width: 0;
 }
 
-#kbybhdrhsc .gt_subtitle {
+#yzlaxrqbba .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
   padding-top: 0;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#kbybhdrhsc .gt_bottom_border {
+#yzlaxrqbba .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_col_headings {
+#yzlaxrqbba .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -603,7 +603,7 @@ tb$publications
   border-right-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_col_heading {
+#yzlaxrqbba .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -623,7 +623,7 @@ tb$publications
   overflow-x: hidden;
 }
 
-#kbybhdrhsc .gt_column_spanner_outer {
+#yzlaxrqbba .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -635,27 +635,27 @@ tb$publications
   padding-right: 4px;
 }
 
-#kbybhdrhsc .gt_column_spanner_outer:first-child {
+#yzlaxrqbba .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kbybhdrhsc .gt_column_spanner_outer:last-child {
+#yzlaxrqbba .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kbybhdrhsc .gt_column_spanner {
+#yzlaxrqbba .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
   vertical-align: bottom;
   padding-top: 5px;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
 }
 
-#kbybhdrhsc .gt_group_heading {
+#yzlaxrqbba .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -677,7 +677,7 @@ tb$publications
   vertical-align: middle;
 }
 
-#kbybhdrhsc .gt_empty_group_heading {
+#yzlaxrqbba .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -692,15 +692,15 @@ tb$publications
   vertical-align: middle;
 }
 
-#kbybhdrhsc .gt_from_md > :first-child {
+#yzlaxrqbba .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kbybhdrhsc .gt_from_md > :last-child {
+#yzlaxrqbba .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kbybhdrhsc .gt_row {
+#yzlaxrqbba .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -719,7 +719,7 @@ tb$publications
   overflow-x: hidden;
 }
 
-#kbybhdrhsc .gt_stub {
+#yzlaxrqbba .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -731,7 +731,7 @@ tb$publications
   padding-left: 12px;
 }
 
-#kbybhdrhsc .gt_summary_row {
+#yzlaxrqbba .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -741,7 +741,7 @@ tb$publications
   padding-right: 5px;
 }
 
-#kbybhdrhsc .gt_first_summary_row {
+#yzlaxrqbba .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -751,7 +751,7 @@ tb$publications
   border-top-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_grand_summary_row {
+#yzlaxrqbba .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -761,7 +761,7 @@ tb$publications
   padding-right: 5px;
 }
 
-#kbybhdrhsc .gt_first_grand_summary_row {
+#yzlaxrqbba .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -771,11 +771,11 @@ tb$publications
   border-top-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_striped {
+#yzlaxrqbba .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kbybhdrhsc .gt_table_body {
+#yzlaxrqbba .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -784,7 +784,7 @@ tb$publications
   border-bottom-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_footnotes {
+#yzlaxrqbba .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -798,13 +798,13 @@ tb$publications
   border-right-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_footnote {
+#yzlaxrqbba .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#kbybhdrhsc .gt_sourcenotes {
+#yzlaxrqbba .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -818,54 +818,50 @@ tb$publications
   border-right-color: #D3D3D3;
 }
 
-#kbybhdrhsc .gt_sourcenote {
+#yzlaxrqbba .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#kbybhdrhsc .gt_left {
+#yzlaxrqbba .gt_left {
   text-align: left;
 }
 
-#kbybhdrhsc .gt_center {
+#yzlaxrqbba .gt_center {
   text-align: center;
 }
 
-#kbybhdrhsc .gt_right {
+#yzlaxrqbba .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kbybhdrhsc .gt_font_normal {
+#yzlaxrqbba .gt_font_normal {
   font-weight: normal;
 }
 
-#kbybhdrhsc .gt_font_bold {
+#yzlaxrqbba .gt_font_bold {
   font-weight: bold;
 }
 
-#kbybhdrhsc .gt_font_italic {
+#yzlaxrqbba .gt_font_italic {
   font-style: italic;
 }
 
-#kbybhdrhsc .gt_super {
+#yzlaxrqbba .gt_super {
   font-size: 65%;
 }
 
-#kbybhdrhsc .gt_footnote_marks {
+#yzlaxrqbba .gt_footnote_marks {
   font-style: italic;
+  font-weight: normal;
   font-size: 65%;
 }
 </style>
-<div id="kbybhdrhsc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
-<thead class="gt_header">
-<tr>
-<th colspan="5" class="gt_heading gt_title gt_font_normal" style>Publications</th>
-    </tr>
-<tr>
-<th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
-    </tr>
-</thead>
+<table class="table gt_table">
+<thead class="gt_header"><tr>
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Publications</th>
+    </tr></thead>
 <thead class="gt_col_headings"><tr>
 <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">title</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">authors</th>
@@ -876,101 +872,123 @@ tb$publications
 <tbody class="gt_table_body">
 <tr>
 <td class="gt_row gt_left">APOBEC3B and APOBEC mutational signature as potential predictive markers for immunotherapy response in non-small cell lung cancer</td>
-      <td class="gt_row gt_left">S Wang, M Jia, Z He, XS Liu</td>
-      <td class="gt_row gt_left">Oncogene 37 (29), 3924-3936, 2018</td>
-      <td class="gt_row gt_left">85</td>
-      <td class="gt_row gt_left">2018</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, M Jia, Z He, XS Liu</td>
+<td class="gt_row gt_left">Oncogene 37 (29), 3924-3936, 2018</td>
+<td class="gt_row gt_left">106</td>
+<td class="gt_row gt_left">2018</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction</td>
-      <td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, XS Liu</td>
-      <td class="gt_row gt_left">eLife, 2019</td>
-      <td class="gt_row gt_left">55</td>
-      <td class="gt_row gt_left">2019</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, XS Liu</td>
+<td class="gt_row gt_left">eLife, 2019</td>
+<td class="gt_row gt_left">82</td>
+<td class="gt_row gt_left">2019</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Sex Differences in Cancer Immunotherapy Efficacy, Biomarkers, and Therapeutic Strategy</td>
-      <td class="gt_row gt_left">S Wang, LA Cowley, XS Liu</td>
-      <td class="gt_row gt_left">Molecules 24 (18), 3214, 2019</td>
-      <td class="gt_row gt_left">37</td>
-      <td class="gt_row gt_left">2019</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, LA Cowley, XS Liu</td>
+<td class="gt_row gt_left">Molecules 24 (18), 3214, 2019</td>
+<td class="gt_row gt_left">54</td>
+<td class="gt_row gt_left">2019</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">The predictive power of tumor mutational burden in lung cancer immunotherapy response is influenced by patients' sex</td>
-      <td class="gt_row gt_left">S Wang, J Zhang, Z He, K Wu, XS Liu</td>
-      <td class="gt_row gt_left">International journal of cancer 145 (10), 2840-2849, 2019</td>
-      <td class="gt_row gt_left">30</td>
-      <td class="gt_row gt_left">2019</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, J Zhang, Z He, K Wu, XS Liu</td>
+<td class="gt_row gt_left">International journal of cancer 145 (10), 2840-2849, 2019</td>
+<td class="gt_row gt_left">35</td>
+<td class="gt_row gt_left">2019</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">The UCSCXenaTools R package: a toolkit for accessing genomics data from UCSC Xena platform, from cancer multi-omics to single-cell RNA-seq</td>
-      <td class="gt_row gt_left">S Wang, XS Liu</td>
-      <td class="gt_row gt_left">Journal of Open Source Software 4 (40), 1627, 2019</td>
-      <td class="gt_row gt_left">11</td>
-      <td class="gt_row gt_left">2019</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, XS Liu</td>
+<td class="gt_row gt_left">Journal of Open Source Software 4 (40), 1627, 2019</td>
+<td class="gt_row gt_left">14</td>
+<td class="gt_row gt_left">2019</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Copy number signature analyses in prostate cancer reveal distinct etiologies and clinical outcomes</td>
-      <td class="gt_row gt_left">S Wang, H Li, M Song, Z He, T Wu, X Wang, Z Tao, K Wu, XS Liu</td>
-      <td class="gt_row gt_left">medRxiv, 2020</td>
-      <td class="gt_row gt_left">3</td>
-      <td class="gt_row gt_left">2020</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, H Li, M Song, Z He, T Wu, X Wang, Z Tao, K Wu, XS Liu</td>
+<td class="gt_row gt_left">medRxiv, 2020</td>
+<td class="gt_row gt_left">5</td>
+<td class="gt_row gt_left">2020</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Ras downstream effector GGCT alleviates oncogenic stress</td>
-      <td class="gt_row gt_left">Z He, S Wang, Y Shao, J Zhang, X Wu, Y Chen, J Hu, F Zhang, XS Liu</td>
-      <td class="gt_row gt_left">Iscience 19, 256-266, 2019</td>
-      <td class="gt_row gt_left">3</td>
-      <td class="gt_row gt_left">2019</td>
-    </tr>
-<tr>
-<td class="gt_row gt_left">Can tumor mutational burden determine the most effective treatment for lung cancer patients?</td>
-      <td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, T Wu, X Sun, K Wu, XS Liu</td>
-      <td class="gt_row gt_left">Lung cancer management 8 (4), LMT21, 2020</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">2020</td>
-    </tr>
+<td class="gt_row gt_left">Z He, S Wang, Y Shao, J Zhang, X Wu, Y Chen, J Hu, F Zhang, XS Liu</td>
+<td class="gt_row gt_left">Iscience 19, 256-266, 2019</td>
+<td class="gt_row gt_left">5</td>
+<td class="gt_row gt_left">2019</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Copy number signature analysis tool and its application in prostate cancer reveals distinct mutational processes and clinical outcomes</td>
-      <td class="gt_row gt_left">S Wang, H Li, M Song, Z Tao, T Wu, Z He, X Zhao, K Wu, XS Liu</td>
-      <td class="gt_row gt_left">PLoS genetics 17 (5), e1009557, 2021</td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">2021</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, H Li, M Song, Z Tao, T Wu, Z He, X Zhao, K Wu, XS Liu</td>
+<td class="gt_row gt_left">PLoS genetics 17 (5), e1009557, 2021</td>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left">2021</td>
+</tr>
+<tr>
+<td class="gt_row gt_left">Can tumor mutational burden determine the most effective treatment for lung cancer patients?</td>
+<td class="gt_row gt_left">S Wang, Z He, X Wang, H Li, T Wu, X Sun, K Wu, XS Liu</td>
+<td class="gt_row gt_left">Lung cancer management 8 (4), LMT21, 2020</td>
+<td class="gt_row gt_left">2</td>
+<td class="gt_row gt_left">2020</td>
+</tr>
+<tr>
+<td class="gt_row gt_left">Ggct (&amp;#947;&amp;#8208;glutamyl cyclotransferase) plays an important role in erythrocyte antioxidant defense and red blood cell survival</td>
+<td class="gt_row gt_left">Z He, X Sun, S Wang, D Bai, X Zhao, Y Han, P Hao, XS Liu</td>
+<td class="gt_row gt_left">British Journal of Haematology 195 (2), 267-275, 2021</td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">2021</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Pan-cancer noncoding genomic analysis identifies functional CDC20 promoter mutation hotspots</td>
-      <td class="gt_row gt_left">Z He, T Wu, S Wang, J Zhang, X Sun, Z Tao, X Zhao, H Li, K Wu, XS Liu</td>
-      <td class="gt_row gt_left">Iscience 24 (4), 102285, 2021</td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">2021</td>
-    </tr>
+<td class="gt_row gt_left">Z He, T Wu, S Wang, J Zhang, X Sun, Z Tao, X Zhao, H Li, K Wu, XS Liu</td>
+<td class="gt_row gt_left">Iscience 24 (4), 102285, 2021</td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">2021</td>
+</tr>
 <tr>
-<td class="gt_row gt_left">UCSCXenaShiny: an R package for exploring and analyzing UCSC Xena public datasets in web browser</td>
-      <td class="gt_row gt_left">S Wang, Y Xiong, K Gu, L Zhao, Y Li, F Zhao, X Li, XS Liu</td>
-      <td class="gt_row gt_left">Preprints, 2020</td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">2020</td>
-    </tr>
+<td class="gt_row gt_left">Essential role for Ggct in erythrocyte antioxidant defense</td>
+<td class="gt_row gt_left">Z He, X Sun, S Wang, D Bai, X Zhao, Y Han, P Hao, XS Liu</td>
+<td class="gt_row gt_left">bioRxiv, 2021</td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">2021</td>
+</tr>
+<tr>
+<td class="gt_row gt_left">UCSCXenaShiny: an R/CRAN package for interactive analysis of UCSC Xena data</td>
+<td class="gt_row gt_left">S Wang, Y Xiong, L Zhao, K Gu, Y Li, F Zhao, J Li, M Wang, H Wang, ...</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">2021</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Sigflow: an automated and comprehensive pipeline for cancer genome mutational signature analysis</td>
-      <td class="gt_row gt_left">S Wang, Z Tao, T Wu, XS Liu</td>
-      <td class="gt_row gt_left">bioRxiv, 2020</td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">2020</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, Z Tao, T Wu, XS Liu</td>
+<td class="gt_row gt_left">Bioinformatics 37 (11), 1590-1592, 2020</td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">2020</td>
+</tr>
+<tr>
+<td class="gt_row gt_left">UCSCXenaShiny: an R package for exploring and analyzing UCSC Xena public datasets in web browser</td>
+<td class="gt_row gt_left">S Wang, Y Xiong, K Gu, L Zhao, Y Li, F Zhao, X Li, XS Liu</td>
+<td class="gt_row gt_left">Preprints, 2020</td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">2020</td>
+</tr>
 <tr>
 <td class="gt_row gt_left">Revisiting neoantigen depletion signal in the untreated cancer genome</td>
-      <td class="gt_row gt_left">S Wang, X Wang, T Wu, Z He, H Li, X Sun, XS Liu</td>
-      <td class="gt_row gt_left">BioRxiv, 2020</td>
-      <td class="gt_row gt_left">0</td>
-      <td class="gt_row gt_left">2020</td>
-    </tr>
+<td class="gt_row gt_left">S Wang, X Wang, T Wu, Z He, H Li, X Sun, XS Liu</td>
+<td class="gt_row gt_left">bioRxiv, 2020</td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">2020</td>
+</tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
 <td class="gt_sourcenote" colspan="5">
-<strong>Update</strong>: 2021-05-16</td>
+<strong>Update</strong>: 2021-10-19</td>
     </tr></tfoot>
-</table></div>
+</table>
+</div>
 </div>
 <div id="show-plot" class="section level3">
 <h3 class="hasAnchor">

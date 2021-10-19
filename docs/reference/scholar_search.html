@@ -143,7 +143,7 @@
     </tr>
     <tr>
       <th>server_url</th>
-      <td><p>Server URL, here I use <a href='https://scaleserp.com/google-scholar-api'>Scale SERP API</a>.</p></td>
+      <td><p>Server URL, here I use <a href='https://www.scaleserp.com/google-scholar-api'>Scale SERP API</a>.</p></td>
     </tr>
     <tr>
       <th>server_key</th>
@@ -159,15 +159,14 @@ Total 125 free searches per month.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>scholar_search</span><span class='op'>(</span><span class='st'>"Shixiang Wang"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Searching author Shixiang Wang</span></div><div class='output co'>#&gt; <span class='message'>Using API server: https://api.scaleserp.com</span></div><div class='output co'>#&gt; <span class='message'>Using Shixiang's personal API key, only 125 free searches per month for all packages users</span></div><div class='output co'>#&gt; <span class='message'>Search times used: 7</span></div><div class='output co'>#&gt; <span class='message'>Search times left: 118</span></div><div class='input'><span class='va'>x</span>
-</div><div class='output co'>#&gt;             id
-#&gt; 1 FvNp0NkAAAAJ
-#&gt;                                                                                             desc
-#&gt; 1 Shixiang Wang (王诗翔)ShanghaiTech UniversityVerified email at shanghaitech.edu.cnCited by 226</div><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>scholar_search</span><span class='op'>(</span><span class='st'>"Shixiang Wang"</span>, is_author <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Searching Shixiang Wang</span></div><div class='output co'>#&gt; <span class='message'>Using API server: https://api.scaleserp.com</span></div><div class='output co'>#&gt; <span class='message'>Using Shixiang's personal API key, only 125 free searches per month for all packages users</span></div><div class='output co'>#&gt; <span class='message'>Search times used: 8</span></div><div class='output co'>#&gt; <span class='message'>Search times left: 117</span></div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+</div><div class='output co'>#&gt; <span class='message'>Searching author Shixiang Wang</span></div><div class='output co'>#&gt; <span class='message'>Using API server: https://api.scaleserp.com</span></div><div class='output co'>#&gt; <span class='message'>Using Shixiang's personal API key, only 125 free searches per month for all packages users</span></div><div class='output co'>#&gt; <span class='message'>Search times used: 13</span></div><div class='output co'>#&gt; <span class='message'>Search times left: 112</span></div><div class='output co'>#&gt; <span class='message'>No info found, the XPath to query info may be changed, please report to the developer.</span>
+#&gt; <span class='message'>NULL will be returned!</span></div><div class='input'><span class='va'>x</span>
+</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>scholar_search</span><span class='op'>(</span><span class='st'>"Shixiang Wang"</span>, is_author <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Searching Shixiang Wang</span></div><div class='output co'>#&gt; <span class='message'>Using API server: https://api.scaleserp.com</span></div><div class='output co'>#&gt; <span class='message'>Using Shixiang's personal API key, only 125 free searches per month for all packages users</span></div><div class='output co'>#&gt; <span class='message'>Search times used: 14</span></div><div class='output co'>#&gt; <span class='message'>Search times left: 111</span></div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='va'>x</span><span class='op'>$</span><span class='va'>gt</span>
 <span class='op'>}</span>
-</div><div class='output co'>#&gt; &lt;style&gt;html {
+</div><div class='output co'>#&gt; &lt;div id="mwlefoodfi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"&gt;
+#&gt;   &lt;style&gt;html {
 #&gt;   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 #&gt; }
 #&gt; 
@@ -223,7 +222,7 @@ Total 125 free searches per month.</p></td>
 #&gt;   font-size: 85%;
 #&gt;   font-weight: initial;
 #&gt;   padding-top: 0;
-#&gt;   padding-bottom: 4px;
+#&gt;   padding-bottom: 6px;
 #&gt;   border-top-color: #FFFFFF;
 #&gt;   border-top-width: 0;
 #&gt; }
@@ -295,7 +294,7 @@ Total 125 free searches per month.</p></td>
 #&gt;   border-bottom-color: #D3D3D3;
 #&gt;   vertical-align: bottom;
 #&gt;   padding-top: 5px;
-#&gt;   padding-bottom: 6px;
+#&gt;   padding-bottom: 5px;
 #&gt;   overflow-x: hidden;
 #&gt;   display: inline-block;
 #&gt;   width: 100%;
@@ -500,10 +499,11 @@ Total 125 free searches per month.</p></td>
 #&gt; 
 #&gt; #mwlefoodfi .gt_footnote_marks {
 #&gt;   font-style: italic;
+#&gt;   font-weight: normal;
 #&gt;   font-size: 65%;
 #&gt; }
 #&gt; &lt;/style&gt;
-#&gt; &lt;div id="mwlefoodfi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"&gt;&lt;table class="gt_table"&gt;
+#&gt;   &lt;table class="gt_table"&gt;
 #&gt;   
 #&gt;   &lt;thead class="gt_col_headings"&gt;
 #&gt;     &lt;tr&gt;
@@ -515,150 +515,111 @@ Total 125 free searches per month.</p></td>
 #&gt;     &lt;/tr&gt;
 #&gt;   &lt;/thead&gt;
 #&gt;   &lt;tbody class="gt_table_body"&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://elifesciences.org/articles/49020&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;elifesciences.org&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;S Wang, Z He, X Wang, H Li, XS Liu - Elife, 2019 - elifesciences.org&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Immunotherapy, represented by immune checkpoint inhibitors (ICI), is transforming the treatment of cancer. However, only a small percentage of patients show response to ICI, and there is an unmet need for biomarkers that will identify patients who are more likely to …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;[HTML][HTML] APOBEC3B and APOBEC mutational signature as potential predictive markers for immunotherapy response in non-small cell lung cancer&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.nature.com/articles/s41388-018-0245-9&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.nature.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;S Wang, M Jia, Z He, XS Liu - Oncogene, 2018 - nature.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Non-small cell lung cancer (NSCLC) is known to carry heavy mutation load. Besides smoking, cytidine deaminase APOBEC3B plays a key role in the mutation process of NSCLC. APOBEC3B is also reported to be upregulated and predicts bad prognosis in …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;The predictive power of tumor mutational burden in lung cancer immunotherapy response is influenced by patients' sex&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://onlinelibrary.wiley.com/doi/abs/10.1002/ijc.32327&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;onlinelibrary.wiley.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;S Wang, J Zhang, Z He, K Wu… - International journal of …, 2019 - Wiley Online Library&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Immunotherapy, represented by immune checkpoint inhibitors (ICI), is transforming the treatment of cancer. However, only a fraction of patients show response to ICI, and there is an unmet need for biomarkers that will identify patients more likely to respond to ICI. Here …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Sex differences in cancer immunotherapy efficacy, biomarkers, and therapeutic strategy&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.mdpi.com/527894&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.mdpi.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;S Wang, LA Cowley, XS Liu - Molecules, 2019 - mdpi.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Sex differences in innate and adaptive immune responses are known, and women generally mount a stronger immune response than men. Cancer immunotherapy, represented by immune checkpoint inhibitors (ICIs), has revolutionized the treatment of cancer, and sex …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Strong and tough self-healing elastomers enabled by dual reversible networks formed by ionic interactions and dynamic covalent bonds&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S0032386118308802&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Y Peng, Y Yang, Q Wu, S Wang, G Huang, J Wu - Polymer, 2018 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;A strong and tough self-healing elastomer is prepared based on double reversible networks consisting of ionic interactions and Diels-Alder (DA) crosslinks. The elastomer is synthesized through one-pot copolymerization of a pair of oppositely charged monomers and furan …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Degradation of diclofenac by Fe (II)-activated bisulfite: Kinetics, mechanism and transformation products&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S0045653519317424&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;H Wang, S Wang, Y Liu, Y Fu, P Wu, G Zhou - Chemosphere, 2019 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;As an emerging pollutant, Diclofenac (DCF) has potential threats to ecosystem and human health, and it can hardly be removed by conventional wastewater treatment processes. In this study, Fe (II)-activated bisulfite (BS), an advanced oxidation process, was used for rapid …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Effective degradation of sulfamethoxazole with Fe2+-zeolite/peracetic acid&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S1383586619318593&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;S Wang, H Wang, Y Liu, Y Fu - Separation and Purification Technology, 2020 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Peracetic acid (PAA), a green disinfectant, has been widely used in the wastewater treatment. Here, a novel heterogeneous advanced oxidation process (Fe 2+-zeolite/PAA) capable of generating hydroxyl radical was developed to remove sulfamethoxazole (SMX) …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Adsorptive removal of fluoride from aqueous solutions using Al-humic acid-La aerogel composites&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S1385894716309810&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Y Liu, Q Fan, S Wang, Y Liu, A Zhou, L Fan - Chemical Engineering …, 2016 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;A novel and environmental friendly aerogel composite was synthesized by freeze-drying method using humic acid as low cost starting material. The as-prepared aluminum-humic acid-lanthanum (Al-HA-La) aerogel composites were fully characterized by nitrogen …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;[HTML][HTML] High neutrophil-to-lymphocyte ratio predicts cardiovascular mortality in chronic hemodialysis patients&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.hindawi.com/journals/mi/2017/9327136/abs/&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.hindawi.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;H Li, X Lu, R Xiong, S Wang - Mediators of Inflammation, 2017 - hindawi.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;The neutrophil-to-lymphocyte ratio (NLR) is a novel simple biomarker of inflammation. It has emerged as a predictor of poor prognosis in cancer and cardiovascular disease in general population. But little was known of its prognostic value in chronic hemodialysis (HD) …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Mortality rates among prevalent hemodialysis patients in Beijing: a comparison with USRDS data&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://academic.oup.com/ndt/article-abstract/28/3/724/1812690&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;academic.oup.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;…, T Cui, A Zhang, K Wang, S Wang… - Nephrology Dialysis …, 2013 - academic.oup.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Background The raw annual mortality rate reported in Chinese patients on maintenance hemodialysis (MHD) was around 10% between 2005 to 2010, and it was around 20% in the US as reported by the United States Renal Data System (USRDS). Our hypothesis was that …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Association of circulating levels of ADMA with carotid intima-media thickness in patients with CKD: a systematic review and meta-analysis&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.karger.com/Article/Abstract/486743&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.karger.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;F Wang, R Xiong, S Feng, X Lu, H Li… - Kidney and Blood …, 2018 - karger.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Background/Aims: The incidence of cardiovascular disease in patients with chronic kidney disease (CKD) is significantly higher than that in the general population. Carotid intima-media thickness (CIMT) is considered to be an important predictor of atherosclerosis …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;A global coexpression network of soybean genes gives insights into the evolution of nodulation in nonlegumes and legumes&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://nph.onlinelibrary.wiley.com/doi/abs/10.1111/nph.15845&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;nph.onlinelibrary.wiley.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;…, S Chen, X Chen, C Liu, S Wang, H Wang… - New …, 2019 - Wiley Online Library&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;A coexpression network is a powerful tool for revealing genes' relationship with many biological processes. Mass transcriptomic and genomic data from different plant species provide the foundation for understanding the evolution of nodulation across the Viridiplantae …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;[HTML][HTML] A novel compound DBZ ameliorates neuroinflammation in LPS-stimulated microglia and ischemic stroke rats: Role of Akt (Ser473)/GSK3β (Ser9)-mediated …&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S2213231720308491&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;S Liao, J Wu, R Liu, S Wang, J Luo, Y Yang, Y Qin, T Li… - Redox biology, 2020 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Microglia-mediated neuroinflammation plays a crucial role in the pathophysiological process of multiple neurological disorders such as ischemic stroke, yet lacks effective therapeutic agents. Previously, we discovered one novel synthetic compound, tanshinol borneol ester …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Serum magnesium and mortality in maintenance hemodialysis patients&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.karger.com/Article/Abstract/451052&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.karger.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;L Yu, H Li, S Wang - Blood purification, 2017 - karger.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Background and Aim: The study aimed to investigate the potential contributing effect of serum magnesium on mortality in maintenance hemodialysis (MHD) patients. Methods: The patients receiving regular MHD in March 2013 were involved. Baseline data including …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Glycine max NNL1 restricts symbiotic compatibility with widely distributed bradyrhizobia via root hair infection&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.nature.com/articles/s41477-020-00832-7&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.nature.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;…, S Chen, H Wang, X Chen, W Fan, K Tian, Y Wang… - Nature Plants, 2021 - nature.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Symbiosis between soybean (Glycine max) and rhizobia is essential for efficient nitrogen fixation. Rhizobial effectors secreted through the type-III secretion system are key for mediating the interactions between plants and rhizobia, but the molecular mechanism …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Sulfamethoxazole degradation by UV-Fe3+ activated hydrogen sulfite&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S0045653520330162&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;S Wang, G Wang, Y Fu, Y Liu - Chemosphere, 2021 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Exploration of novel advanced oxidation systems with high efficiency toward radical generation is of significant importance due to the extensive and versatile application of reactive species in the wastewater treatment. Herein we report a simple UV-catalytic …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;High neutrophil-to-lymphocyte ratio is a significant predictor of cardiovascular and all-cause mortality in patients undergoing peritoneal dialysis&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.karger.com/Article/Abstract/488696&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.karger.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;X Lu, S Wang, G Zhang, R Xiong, H Li - Kidney and Blood Pressure …, 2018 - karger.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Background/Aims: Chronic inflammation is associated with increased risk of cardiovascular death in patients with end-stage renal disease (ESRD). Although elevated neutrophil-to-lymphocyte ratio (NLR), a novel inflammatory marker, has been shown to predict …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Determination of the main bioactive metabolites of Radix Salvia miltiorrhizae in Compound Danshen Dripping Pills and the tissue distribution of Danshensu in rabbit by SPE …&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://onlinelibrary.wiley.com/doi/abs/10.1002/jssc.200600287&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;onlinelibrary.wiley.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Z Xiaohui, Z Xinfeng, Z Xin, W Shixiang… - Journal of separation …, 2007 - Wiley Online Library&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;A fast solid phase extraction‐high performance liquid chromatography‐ion trap mass spectrometry (SPE‐HPLC‐MSn) method is presented for quantitative determination of 3‐(3, 4‐dihydroxyphenyl)‐2‐hydroxylpropionic acid (Danshensu, DSS) from Compound Danshen …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Effects of ionic liquid and nanogold particles on high-performance liquid chromatography-electrochemical detection and their application in highly efficient separation …&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S003991401201065X&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;P Jia, S Wang, X Meng, W Lan, J Luo, S Liao, C Xiao… - Talanta, 2013 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;A novel high performance liquid chromatography-electrochemical detector (HPLC-ECD) analytical system was developed in this study by integratedly utilizing ionic liquid (IL) of 1-butyl-3-methylimidazolium bromide and an additive of gold nanoparticles. The resulted pilot …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
-#&gt;     &lt;tr&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Thermodynamic study of the interaction between terbutaline and salbutamol with an immobilized β2-adrenoceptor by high-performance liquid chromatography&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S1570023209001196&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;X Zhao, X Zheng, Y Wei, L Bian, S Wang… - … of Chromatography B, 2009 - Elsevier&lt;/td&gt;
-#&gt;       &lt;td class="gt_row gt_left"&gt;Investigation of the interaction between drugs and receptors is very important in revealing the biologic basis and mechanism of the drug, and designing new bioactive compounds. The β 2-adrenoceptor (β 2-AR) was purified from rabbit lung tissues and immobilized on the …&lt;/td&gt;
-#&gt;     &lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://elifesciences.org/articles/49020&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;elifesciences.org&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;S Wang, Z He, X Wang, H Li, XS Liu - Elife, 2019 - elifesciences.org&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Immunotherapy, represented by immune checkpoint inhibitors (ICI), is transforming the treatment of cancer. However, only a small percentage of patients show response to ICI, and there is an unmet need for biomarkers that will identify patients who are more likely to …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;[HTML][HTML] APOBEC3B and APOBEC mutational signature as potential predictive markers for immunotherapy response in non-small cell lung cancer&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.nature.com/articles/s41388-018-0245-9&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.nature.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;S Wang, M Jia, Z He, XS Liu - Oncogene, 2018 - nature.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Non-small cell lung cancer (NSCLC) is known to carry heavy mutation load. Besides smoking, cytidine deaminase APOBEC3B plays a key role in the mutation process of NSCLC. APOBEC3B is also reported to be upregulated and predicts bad prognosis in …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Sex differences in cancer immunotherapy efficacy, biomarkers, and therapeutic strategy&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.mdpi.com/527894&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.mdpi.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;S Wang, LA Cowley, XS Liu - Molecules, 2019 - mdpi.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Sex differences in innate and adaptive immune responses are known, and women generally mount a stronger immune response than men. Cancer immunotherapy, represented by immune checkpoint inhibitors (ICIs), has revolutionized the treatment of cancer, and sex …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;[HTML][HTML] A novel compound DBZ ameliorates neuroinflammation in LPS-stimulated microglia and ischemic stroke rats: Role of Akt (Ser473)/GSK3β (Ser9)-mediated …&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S2213231720308491&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;S Liao, J Wu, R Liu, S Wang, J Luo, Y Yang, Y Qin, T Li… - Redox biology, 2020 - Elsevier&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Microglia-mediated neuroinflammation plays a crucial role in the pathophysiological process of multiple neurological disorders such as ischemic stroke, yet lacks effective therapeutic agents. Previously, we discovered one novel synthetic compound, tanshinol borneol ester …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;The predictive power of tumor mutational burden in lung cancer immunotherapy response is influenced by patients' sex&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://onlinelibrary.wiley.com/doi/abs/10.1002/ijc.32327&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;onlinelibrary.wiley.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;S Wang, J Zhang, Z He, K Wu… - International journal of …, 2019 - Wiley Online Library&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Immunotherapy, represented by immune checkpoint inhibitors (ICI), is transforming the treatment of cancer. However, only a fraction of patients show response to ICI, and there is an unmet need for biomarkers that will identify patients more likely to respond to ICI. Here …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Strong and tough self-healing elastomers enabled by dual reversible networks formed by ionic interactions and dynamic covalent bonds&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S0032386118308802&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Y Peng, Y Yang, Q Wu, S Wang, G Huang, J Wu - Polymer, 2018 - Elsevier&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;A strong and tough self-healing elastomer is prepared based on double reversible networks consisting of ionic interactions and Diels-Alder (DA) crosslinks. The elastomer is synthesized through one-pot copolymerization of a pair of oppositely charged monomers and furan …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Degradation of diclofenac by Fe (II)-activated bisulfite: Kinetics, mechanism and transformation products&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S0045653519317424&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;H Wang, S Wang, Y Liu, Y Fu, P Wu, G Zhou - Chemosphere, 2019 - Elsevier&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;As an emerging pollutant, Diclofenac (DCF) has potential threats to ecosystem and human health, and it can hardly be removed by conventional wastewater treatment processes. In this study, Fe (II)-activated bisulfite (BS), an advanced oxidation process, was used for rapid …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Glycine max NNL1 restricts symbiotic compatibility with widely distributed bradyrhizobia via root hair infection&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.nature.com/articles/s41477-020-00832-7&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.nature.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;…, S Chen, H Wang, X Chen, W Fan, K Tian, Y Wang… - Nature Plants, 2021 - nature.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Symbiosis between soybean (Glycine max) and rhizobia is essential for efficient nitrogen fixation. Rhizobial effectors secreted through the type-III secretion system are key for mediating the interactions between plants and rhizobia, but the molecular mechanism …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Adsorptive removal of fluoride from aqueous solutions using Al-humic acid-La aerogel composites&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S1385894716309810&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Y Liu, Q Fan, S Wang, Y Liu, A Zhou, L Fan - Chemical Engineering …, 2016 - Elsevier&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;A novel and environmental friendly aerogel composite was synthesized by freeze-drying method using humic acid as low cost starting material. The as-prepared aluminum-humic acid-lanthanum (Al-HA-La) aerogel composites were fully characterized by nitrogen …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Mortality rates among prevalent hemodialysis patients in Beijing: a comparison with USRDS data&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://academic.oup.com/ndt/article-abstract/28/3/724/1812690&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;academic.oup.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;…, T Cui, A Zhang, K Wang, S Wang… - Nephrology Dialysis …, 2013 - academic.oup.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Background The raw annual mortality rate reported in Chinese patients on maintenance hemodialysis (MHD) was around 10% between 2005 to 2010, and it was around 20% in the US as reported by the United States Renal Data System (USRDS). Our hypothesis was that …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Effective degradation of sulfamethoxazole with Fe2+-zeolite/peracetic acid&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S1383586619318593&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;S Wang, H Wang, Y Liu, Y Fu - Separation and Purification Technology, 2020 - Elsevier&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Peracetic acid (PAA), a green disinfectant, has been widely used in the wastewater treatment. Here, a novel heterogeneous advanced oxidation process (Fe 2+-zeolite/PAA) capable of generating hydroxyl radical was developed to remove sulfamethoxazole (SMX) …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Femtosecond laser direct writing of flexibly configured waveguide geometries in optical crystals: fabrication and application&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;http://www.oejournal.org/article/doi/10.29026/oea.2020.190042&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.oejournal.org&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Y Jia, S Wang, F Chen - Opto-Electronic Advances, 2020 - oejournal.org&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Optical waveguides are far more than mere connecting elements in integrated optical systems and circuits. Benefiting from their high optical confinement and miniaturized footprints, waveguide structures established based on crystalline materials, particularly, are …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;[HTML][HTML] High neutrophil-to-lymphocyte ratio predicts cardiovascular mortality in chronic hemodialysis patients&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.hindawi.com/journals/mi/2017/9327136/&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.hindawi.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;H Li, X Lu, R Xiong, S Wang - Mediators of Inflammation, 2017 - hindawi.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;The neutrophil-to-lymphocyte ratio (NLR) is a novel simple biomarker of inflammation. It has emerged as a predictor of poor prognosis in cancer and cardiovascular disease in general population. But little was known of its prognostic value in chronic hemodialysis (HD) …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Serum magnesium and mortality in maintenance hemodialysis patients&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.karger.com/Article/Abstract/451052&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.karger.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;L Yu, H Li, S Wang - Blood Purification, 2017 - karger.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Background and Aim: The study aimed to investigate the potential contributing effect of serum magnesium on mortality in maintenance hemodialysis (MHD) patients. Methods: The patients receiving regular MHD in March 2013 were involved. Baseline data including …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;On-machine surface defect detection using light scattering and deep learning&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.osapublishing.org/abstract.cfm?uri=josaa-37-9-b53&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.osapublishing.org&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;M Liu, CF Cheung, N Senin, S Wang, R Su, R Leach - JOSA A, 2020 - osapublishing.org&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;This paper presents an on-machine surface defect detection system using light scattering and deep learning. A supervised deep learning model is used to mine the information related to defects from light scattering patterns. A convolutional neural network is trained on …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;A global coexpression network of soybean genes gives insights into the evolution of nodulation in nonlegumes and legumes&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://nph.onlinelibrary.wiley.com/doi/abs/10.1111/nph.15845&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;nph.onlinelibrary.wiley.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;…, S Chen, X Chen, C Liu, S Wang, H Wang… - New …, 2019 - Wiley Online Library&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;A coexpression network is a powerful tool for revealing genes' relationship with many biological processes. Mass transcriptomic and genomic data from different plant species provide the foundation for understanding the evolution of nodulation across the Viridiplantae …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Association of circulating levels of ADMA with carotid intima-media thickness in patients with CKD: a systematic review and meta-analysis&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.karger.com/Article/Abstract/486743&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.karger.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;F Wang, R Xiong, S Feng, X Lu, H Li… - Kidney and Blood …, 2018 - karger.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Background/Aims: The incidence of cardiovascular disease in patients with chronic kidney disease (CKD) is significantly higher than that in the general population. Carotid intima-media thickness (CIMT) is considered to be an important predictor of atherosclerosis …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;High neutrophil-to-lymphocyte ratio is a significant predictor of cardiovascular and all-cause mortality in patients undergoing peritoneal dialysis&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.karger.com/Article/Abstract/488696&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.karger.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;X Lu, S Wang, G Zhang, R Xiong, H Li - Kidney and Blood Pressure …, 2018 - karger.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Background/Aims: Chronic inflammation is associated with increased risk of cardiovascular death in patients with end-stage renal disease (ESRD). Although elevated neutrophil-to-lymphocyte ratio (NLR), a novel inflammatory marker, has been shown to predict …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Sulfamethoxazole degradation by UV-Fe3+ activated hydrogen sulfite&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S0045653520330162&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;S Wang, G Wang, Y Fu, Y Liu - Chemosphere, 2021 - Elsevier&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Exploration of novel advanced oxidation systems with high efficiency toward radical generation is of significant importance due to the extensive and versatile application of reactive species in the wastewater treatment. Herein we report a simple UV-catalytic …&lt;/td&gt;&lt;/tr&gt;
+#&gt;     &lt;tr&gt;&lt;td class="gt_row gt_left"&gt;Expression of genes in the potential regulatory pathways controlling alternate bearing in 'Fuji'(Malus domestica Borkh.) apple trees during flower induction&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;https://www.sciencedirect.com/science/article/pii/S0981942818304418&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;www.sciencedirect.com&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;X Zuo, D Zhang, S Wang, L Xing, Y Li, S Fan… - Plant Physiology And …, 2018 - Elsevier&lt;/td&gt;
+#&gt; &lt;td class="gt_row gt_left"&gt;Most perennial fruit trees have an alternate bearing problem where a heavy fruit load is produced one year (ON year) but few flowers and fruits produced the next year (OFF year), resulting in a significant fluctuation in production. In the present study, comparative …&lt;/td&gt;&lt;/tr&gt;
 #&gt;   &lt;/tbody&gt;
 #&gt;   
 #&gt;   
-#&gt; &lt;/table&gt;&lt;/div&gt;</div><div class='input'><span class='co'># }</span>
+#&gt; &lt;/table&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

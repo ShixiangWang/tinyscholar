@@ -1,3 +1,7 @@
+# tinyscholar 0.1.4
+
+* Fixed the error when `NULL` returned in `scholar_search()`.
+
 # tinyscholar 0.1.3
 
 * Updated the XPath to query author information in `scholar_search()`.
