@@ -10,14 +10,17 @@
 #' @export
 #'
 #' @examples
+#' # Put one unique Scholar ID from Google Scholar
 #' r <- tinyscholar("FvNp0NkAAAAJ")
 #' r
-#' tb <- scholar_table(r)
-#' tb$citations
-#' tb$publications
-#' pl <- scholar_plot(r)
-#' pl$citations
-#' pl$publications
+#' if (!is.null(r)) {
+#'   tb <- scholar_table(r)
+#'   tb$citations
+#'   tb$publications
+#'   pl <- scholar_plot(r)
+#'   pl$citations
+#'   pl$publications
+#' }
 tinyscholar <- function(id, sortby_date = FALSE,
                         use_cache = TRUE, cache_dir = file.path(tempdir(), "tinyscholar")) {
   stopifnot(is.character(id), length(id) == 1)
@@ -74,14 +77,29 @@ tinyscholar <- function(id, sortby_date = FALSE,
     },
     error = function(ex) {
       message("Timeout/error when use hiplot server. Switch to use the server: cse.")
-      R.utils::withTimeout(
+      tryCatch(
         {
-          suppressWarnings(jsonlite::read_json(url2, simplifyVector = TRUE))
+          R.utils::withTimeout(
+            {
+              suppressWarnings(jsonlite::read_json(url2, simplifyVector = TRUE))
+            },
+            timeout = 60
+          )
         },
-        timeout = 30
+        error = function(e) {
+          NULL
+        },
+        warning = function(w) {
+          NULL
+        }
       )
     }
   )
+
+  if (is.null(r)) {
+    message("Bad input or server down or long time to respond, `NULL` returned, try later?")
+    return(invisible(NULL))
+  }
 
   r$citations_per_year <- sapply(r$citations_per_year, function(x) x)
   # r$publications$title <- gsub("&#8217;", "'", r$publications$title)

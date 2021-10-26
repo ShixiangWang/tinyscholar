@@ -28,12 +28,15 @@ a \code{Profile} object with list structure.
 Get Google Scholar Profile
 }
 \examples{
+# Put one unique Scholar ID from Google Scholar
 r <- tinyscholar("FvNp0NkAAAAJ")
 r
-tb <- scholar_table(r)
-tb$citations
-tb$publications
-pl <- scholar_plot(r)
-pl$citations
-pl$publications
+if (!is.null(r)) {
+  tb <- scholar_table(r)
+  tb$citations
+  tb$publications
+  pl <- scholar_plot(r)
+  pl$citations
+  pl$publications
+}
 }
