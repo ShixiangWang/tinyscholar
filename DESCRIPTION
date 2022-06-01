@@ -1,6 +1,6 @@
 Package: tinyscholar
 Title: Get and Show Personal 'Google Scholar' Profile
-Version: 0.1.4
+Version: 0.1.5
 Authors@R: 
     person(given = "Shixiang",
            family = "Wang",
@@ -22,7 +22,7 @@ Imports:
     magrittr,
     purrr,
     rlang (>= 0.1.2),
-    rvest,
+    rvest (>= 1.0.0),
     stringr,
     xml2,
     R.utils
@@ -34,4 +34,4 @@ VignetteBuilder:
     knitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0

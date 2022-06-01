@@ -1,3 +1,8 @@
+# tinyscholar 0.1.5
+
+* Fixed query in `scholar_search()` due to API change.
+* Appended a new free key.
+
 # tinyscholar 0.1.4
 
 * Fixed the error when `NULL` returned in `scholar_search()`.

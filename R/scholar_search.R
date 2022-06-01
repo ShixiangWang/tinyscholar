@@ -3,8 +3,8 @@
 #' @param keyword A keyword, can be author name, e.g. "Shixiang Wang".
 #' @param is_author Default is `TRUE`, find author information, if `FALSE`, return the first page result in search engine.
 #' @param server_url Server URL, here I use [Scale SERP API](https://www.scaleserp.com/google-scholar-api).
-#' @param server_key Key for searching data, you can obtain it from URL above. If not set, use personal key from Shixiang.
-#' Total 125 free searches per month.
+#' @param server_key Key for searching data (multiple is acceptable), you can obtain it from URL above. If not set, use personal key from Shixiang.
+#' Total 125x2 free searches per month.
 #'
 #' @return A `data.frame` or a `list`.
 #' @export
@@ -25,10 +25,10 @@ scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.
   message("Using API server: ", server_url)
 
   if (is.null(server_key)) {
-    server_key <- "4E4D8A41324841C9A283A8F520775132"
-    message("Using Shixiang's personal API key, only 125 free searches per month for all packages users")
+    server_key <- c("4E4D8A41324841C9A283A8F520775132", "A6C716AB393448B19DFB7A242DB6605D")
+    message("Using Shixiang's personal API key, only 125x2 free searches per month for all packages users")
   } else {
-    message("Using API key: ", server_key)
+    message("Using API key: ", paste(server_key, collapse = ", "))
   }
 
   query_url <- paste0(
@@ -37,20 +37,43 @@ scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.
     server_key,
     "&q=",
     gsub(" ", "+", keyword, fixed = TRUE),
-    "&include_html=true&hl=en&scholar_include_citations=true&search_type=scholar&output=json&num=100"
+    "&include_html=true&hl=en&scholar_include_citations=true&search_type=scholar&output=json"
   )
 
-  x <- tryCatch(
-    suppressWarnings(jsonlite::read_json(query_url)),
-    error = function(e) {
-      x <- curl::curl_fetch_memory(query_url)
-      jsonlite::fromJSON(rawToChar(x$content))
+  if (length(query_url) > 1) {
+    x <- NULL
+    for (i in seq_along(query_url)) {
+      message("querying with the ", i, "th API key")
+      url <- query_url[i]
+      x <- tryCatch(
+        suppressWarnings(jsonlite::read_json(url)),
+        error = function(e) {
+          x <- curl::curl_fetch_memory(url)
+          jsonlite::fromJSON(rawToChar(x$content))
+        }
+      )
+
+      if (x$request_info$success) break()
     }
-  )
+
+
+    if (is.null(x)) {
+      message("query failed for multiple keys. Probably no free searches left this month.")
+      return(NULL)
+    }
+  } else {
+    x <- tryCatch(
+      suppressWarnings(jsonlite::read_json(query_url)),
+      error = function(e) {
+        x <- curl::curl_fetch_memory(query_url)
+        jsonlite::fromJSON(rawToChar(x$content))
+      }
+    )
+  }
 
   if (!x$request_info$success) {
     message("No free searches left this month.")
-    if (server_key == "4E4D8A41324841C9A283A8F520775132") {
+    if (server_key %in% c("4E4D8A41324841C9A283A8F520775132", "A6C716AB393448B19DFB7A242DB6605D")) {
       message("You can apply your own key at https://scaleserp.com/")
     }
     return(invisible(NULL))
@@ -61,7 +84,7 @@ scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.
 
   if (is_author) {
     page <- xml2::read_html(x$html)
-    z <- rvest::html_nodes(page, xpath = "/html/body/div/div[9]/div[2]/div[2]/div[2]/div[1]/table")
+    z <- rvest::html_elements(page, "#gs_res_ccl_mid > div:nth-child(1) > table")
     if (length(z) < 1) {
       message("No info found, the XPath to query info may be changed, please report to the developer.\nNULL will be returned!")
       return(invisible(NULL))
