@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tinyscholar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
@@ -56,42 +56,51 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">tinyscholar</span><span class="op">(</span>
-  <span class="va">id</span>,
-  sortby_date <span class="op">=</span> <span class="cn">FALSE</span>,
-  use_cache <span class="op">=</span> <span class="cn">TRUE</span>,
-  cache_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"tinyscholar"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">tinyscholar</span><span class="op">(</span></span>
+<span>  <span class="va">id</span>,</span>
+<span>  sortby_date <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  use_cache <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  cache_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"tinyscholar"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>id</dt>
 <dd><p>Your google scholar identifier. You can find it in the URL of your google scholar profile.</p></dd>
+
+
 <dt>sortby_date</dt>
 <dd><p>Logical. If <code>TRUE</code>, the publications are sorted by date.</p></dd>
+
+
 <dt>use_cache</dt>
 <dd><p>If <code>TRUE</code> (default), store data to a cache file to avoid querying in next time within a day.
 The store file is identical for each person and each date.</p></dd>
+
+
 <dt>cache_dir</dt>
 <dd><p>A directory path.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>a <code>Profile</code> object with list structure.</p>
+    
+
+<p>a <code>Profile</code> object with list structure.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Put one unique Scholar ID from Google Scholar</span></span>
-<span class="r-in"><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu">tinyscholar</span><span class="op">(</span><span class="st">"FvNp0NkAAAAJ"</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using cache directory: /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpS3Vd1h/tinyscholar</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Cannot find cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpS3Vd1h/tinyscholar/unsorted_2022-06-01_FvNp0NkAAAAJ.rds</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Put one unique Scholar ID from Google Scholar</span></span></span>
+<span class="r-in"><span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu">tinyscholar</span><span class="op">(</span><span class="st">"FvNp0NkAAAAJ"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using cache directory: /tmp/Rtmp8naN3o/tinyscholar</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Cannot find cache file /tmp/Rtmp8naN3o/tinyscholar/unsorted_2022-07-03_FvNp0NkAAAAJ.rds</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Try quering data from server: hiplot</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Timeout/error when use hiplot server. Switch to use the server: cse.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Save data to cache file /var/folders/bj/nw1w4g1j37ddpgb6zmh3sfh80000gn/T//RtmpS3Vd1h/tinyscholar/unsorted_2022-06-01_FvNp0NkAAAAJ.rds</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Save data to cache file /tmp/Rtmp8naN3o/tinyscholar/unsorted_2022-07-03_FvNp0NkAAAAJ.rds</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Done</span>
-<span class="r-in"><span class="va">r</span></span>
+<span class="r-in"><span><span class="va">r</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $publications</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                              title</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                APOBEC3B and APOBEC mutational signature as potential predictive markers for immunotherapy response in non-small cell lung cancer</span>
@@ -100,12 +109,12 @@ The store file is identical for each person and each date.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                             The predictive power of tumor mutational burden in lung cancer immunotherapy response is influenced by patients' sex</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5       The UCSCXenaTools R package: a toolkit for accessing genomics data from UCSC Xena platform, from cancer multi-omics to single-cell RNA-seq</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6           Copy number signature analysis tool and its application in prostate cancer reveals distinct mutational processes and clinical outcomes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                                      UCSCXenaShiny: an R/CRAN package for interactive analysis of UCSC xena data</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                                      UCSCXenaShiny: an R/CRAN package for interactive analysis of UCSC Xena data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8                                               Copy number signature analyses in prostate cancer reveal distinct etiologies and clinical outcomes</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9                                                                                         Ras downstream effector GGCT alleviates oncogenic stress</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10                                                Sigflow: an automated and comprehensive pipeline for cancer genome mutational signature analysis</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                                    Can tumor mutational burden determine the most effective treatment for lung cancer patients?</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                    Hiplot: A comprehensive and easy-to-use web service boosting publication-ready biomedical data visualization</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                    Hiplot: A comprehensive and easy-to-use web service boosting publication-ready biomedical data visualization</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                                    Can tumor mutational burden determine the most effective treatment for lung cancer patients?</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13                                                                           Revisiting neoantigen depletion signal in the untreated cancer genome</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14 Deciphering clonal dynamics and metastatic routines in a rare patient of synchronous triple-primary tumors and multiple metastases with MPTevol</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15                                                                        Quantification of neoantigen-mediated immunoediting in cancer evolution.</span>
@@ -125,8 +134,8 @@ The store file is identical for each person and each date.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8                S Wang, H Li, M Song, Z He, T Wu, X Wang, Z Tao, K Wu, XS Liu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9           Z He, S Wang, Y Shao, J Zhang, X Wu, Y Chen, J Hu, F Zhang, XS Liu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10                                                 S Wang, Z Tao, T Wu, XS Liu</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                       S Wang, Z He, X Wang, H Li, T Wu, X Sun, K Wu, XS Liu</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 J Li, B Miao, S Wang, W Dong, H Xu, C Si, W Wang, S Duan, J Lou, Z Bao, ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 J Li, B Miao, S Wang, W Dong, H Xu, C Si, W Wang, S Duan, J Lou, Z Bao, ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                       S Wang, Z He, X Wang, H Li, T Wu, X Sun, K Wu, XS Liu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13                             S Wang, X Wang, T Wu, Z He, H Li, X Sun, XS Liu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14          Q Chen, QN Wu, YM Rong, S Wang, Z Zuo, L Bai, B Zhang, S Yuan, ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15      T Wu, G Wang, X Wang, S Wang, X Zhao, C Wu, W Ning, Z Tao, F Chen, ...</span>
@@ -136,18 +145,18 @@ The store file is identical for each person and each date.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 19                    Z He, X Sun, S Wang, D Bai, X Zhao, Y Han, P Hao, XS Liu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 20       Z He, T Wu, S Wang, J Zhang, X Sun, Z Tao, X Zhao, H Li, K Wu, XS Liu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                        venue citations year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          Oncogene 37 (29), 3924-3936, 2018       132 2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                eLife, 2019       119 2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                              Molecules 24 (18), 3214, 2019        77 2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  International journal of cancer 145 (10), 2840-2849, 2019        46 2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5         Journal of Open Source Software 4 (40), 1627, 2019        24 2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                       PLoS genetics 17 (5), e1009557, 2021        15 2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                       Bioinformatics 38 (2), 527-529, 2022        13 2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                              medRxiv, 2020         7 2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                 Iscience 19, 256-266, 2019         7 2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                   Bioinformatics 37 (11), 1590-1592, 2020         4 2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                 Lung Cancer Management 8 (4), LMT21, 2020         2 2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                             bioRxiv, 2022         1 2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          Oncogene 37 (29), 3924-3936, 2018       138 2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                eLife, 2019       125 2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                              Molecules 24 (18), 3214, 2019        81 2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  International journal of cancer 145 (10), 2840-2849, 2019        47 2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         Journal of Open Source Software 4 (40), 1627, 2019        27 2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                       PLoS genetics 17 (5), e1009557, 2021        19 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                       Bioinformatics 38 (2), 527-529, 2022        14 2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                              medRxiv, 2020         8 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                 Iscience 19, 256-266, 2019         8 2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                   Bioinformatics 37 (11), 1590-1592, 2020         6 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                             bioRxiv, 2022         2 2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                 Lung Cancer Management 8 (4), LMT21, 2020         2 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13                                             bioRxiv, 2020         1 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14                         Briefings in Bioinformatics, 2022         0 2022</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15                                     Cancer Research, 2022         0 2022</span>
@@ -159,22 +168,23 @@ The store file is identical for each person and each date.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $citations</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    when count</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 total   448</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2019    32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2020   121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2021   186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2022   103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 total   478</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2018     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2019    32</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2020   121</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2021   193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2022   125</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "ScholarProfile" "list"          </span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="scholar_table.html">scholar_table</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">tb</span><span class="op">$</span><span class="va">citations</span></span>
-<span class="r-in">  <span class="va">tb</span><span class="op">$</span><span class="va">publications</span></span>
-<span class="r-in">  <span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="scholar_plot.html">scholar_plot</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">pl</span><span class="op">$</span><span class="va">citations</span></span>
-<span class="r-in">  <span class="va">pl</span><span class="op">$</span><span class="va">publications</span></span>
-<span class="r-in"><span class="op">}</span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="scholar_table.html">scholar_table</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">tb</span><span class="op">$</span><span class="va">citations</span></span></span>
+<span class="r-in"><span>  <span class="va">tb</span><span class="op">$</span><span class="va">publications</span></span></span>
+<span class="r-in"><span>  <span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="scholar_plot.html">scholar_plot</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">pl</span><span class="op">$</span><span class="va">citations</span></span></span>
+<span class="r-in"><span>  <span class="va">pl</span><span class="op">$</span><span class="va">publications</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-plt img"><img src="tinyscholar-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
@@ -190,7 +200,7 @@ The store file is identical for each person and each date.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

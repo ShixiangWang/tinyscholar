@@ -1,3 +1,7 @@
+# tinyscholar 0.1.6
+
+* Fixed error due to void version (`NULL`) of return papers.
+
 # tinyscholar 0.1.5
 
 * Fixed query in `scholar_search()` due to API change.

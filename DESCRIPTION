@@ -1,6 +1,6 @@
 Package: tinyscholar
 Title: Get and Show Personal 'Google Scholar' Profile
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: 
     person(given = "Shixiang",
            family = "Wang",

@@ -115,7 +115,10 @@ scholar_search <- function(keyword, is_author = TRUE, server_url = "https://api.
     if (!is.null(x$scholar_results)) {
       xx <- x$scholar_results %>%
         purrr::transpose() %>%
-        purrr::map(unlist) %>%
+        purrr::map(function(x) {
+          y = lapply(x, function(x) ifelse(is.null(x), NA, x))
+          unlist(y)
+        }) %>%
         as.data.frame()
       xx$position <- NULL
       return(list(
