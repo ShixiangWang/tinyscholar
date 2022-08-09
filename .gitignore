@@ -36,3 +36,5 @@ vignettes/*.pdf
 *.knit.md
 inst/doc
 .DS_Store
+/doc/
+/Meta/

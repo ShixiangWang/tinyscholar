@@ -1,3 +1,7 @@
+# tinyscholar 0.1.7
+
+* Uneval the code in vignette when the profile is not correct.
+
 # tinyscholar 0.1.6
 
 * Fixed error due to void version (`NULL`) of return papers.
