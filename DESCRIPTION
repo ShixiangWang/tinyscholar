@@ -28,8 +28,7 @@ Imports:
     R.utils
 Suggests: 
     knitr,
-    rmarkdown,
-    roxygen2
+    rmarkdown
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
