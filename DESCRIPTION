@@ -11,7 +11,7 @@ Maintainer: Shixiang Wang <w_shixiang@163.com>
 Description: Provides functions to get personal 'Google Scholar'
     profile data from web API and show it in table or figure format.
 License: MIT + file LICENSE
-URL: https://github.com/ShixiangWang/tinyscholar
+URL: https://shixiangwang.github.io/tinyscholar/, https://github.com/ShixiangWang/tinyscholar
 BugReports: https://github.com/ShixiangWang/tinyscholar/issues
 Imports: 
     curl,
